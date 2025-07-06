@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 function MainCarousel() {
     return (
-        <div className='container border border-0'>
+        <div className='border border-0'>
             <Carousel>
                 <Carousel.Item >
                     <img src={Characters} className="d-block w-100 rounded" />

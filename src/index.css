@@ -40,3 +40,29 @@ body {
 .carousel-indicators>button {
     background-color: white !important
 }
+
+.hide-scroll {
+    overflow-x: hidden;
+    margin-bottom: 5px;
+}
+
+
+.hide-scroll:hover {
+    overflow-x: scroll;
+    margin-bottom: 0px;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    padding: 5px;
+    width: 5px;
+    height: 5px;
+}
+
+.hide-scroll::-webkit-scrollbar-thumb {
+    background: #0dcaf0;
+    border-radius: 5px;
+}
+
+.hide-scroll::-webkit-scrollbar-thumb:hover {
+    background: cyan;
+}
