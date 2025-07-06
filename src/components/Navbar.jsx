@@ -11,16 +11,16 @@ export const MyNavbar = () => {
 	return (
 		<Navbar expand="lg" className="bg-body-dark">
 			<Container fluid>
-				<Navbar.Brand href="/">Inicio</Navbar.Brand>
+				<Link to="/" className="navbar-brand">Inicio</Link>
 				<Navbar.Toggle aria-controls="navbarScroll" />
 				<Navbar.Collapse id="navbarScroll">
 					<Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-						<Nav.Link href="/people">Personajes</Nav.Link>
-						<Nav.Link href="/movies">Películas</Nav.Link>
-						<Nav.Link href="/ships">Naves</Nav.Link>
-						<Nav.Link href="/vehicles">Vehículos</Nav.Link>
-						<Nav.Link href="/species">Especies</Nav.Link>
-						<Nav.Link href="/planets">Planetas</Nav.Link>
+						<Link to="/people" className="nav-link">Personajes</Link>
+						<Link to="/movies" className="nav-link">Películas</Link>
+						<Link to="/ships" className="nav-link">Naves</Link>
+						<Link to="/vehicles" className="nav-link">Vehículos</Link>
+						<Link to="/species" className="nav-link">Especies</Link>
+						<Link to="/planets" className="nav-link">Planetas</Link>
 					</Nav>
 					<Form className="d-flex">
 						<Form.Control type="search" placeholder="Buscar" className="me-2" aria-label="Search" />
@@ -28,6 +28,6 @@ export const MyNavbar = () => {
 					</Form>
 				</Navbar.Collapse>
 			</Container>
-		</Navbar>
+		</Navbar >
 	);
 }

@@ -30,7 +30,10 @@ export const Home = () => {
 		<div className="container text-center mt-5">
 			<h2 className="text-info mb-5" id="longTimeAgo">Hace mucho tiempo, en una galaxia muy muy lejana...</h2>
 			<MainCarousel />
-			<h2 className="mt-5 text-start">Personajes:</h2>
+			<div className="d-flex">
+				<h2 className="mt-4 text-start">Personajes</h2>
+				<div className="mt-5 mx-3 divider"></div>
+			</div>
 			<div className="container-fluid d-flex mt-2">
 				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
 					{store.swPeople.map((person) => (

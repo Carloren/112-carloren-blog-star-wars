@@ -9,49 +9,56 @@ import { Link } from 'react-router-dom';
 
 function MainCarousel() {
     return (
-        <div className='border border-0'>
+        <div className='border border-0 mb-3'>
             <Carousel>
                 <Carousel.Item >
-                    <img src={Characters} className="d-block w-100 rounded" />
-                    <Carousel.Caption className='d-flex flex-column'>
-                        <Link to="/" className='mx-auto'><h1>Personajes</h1></Link>
-                        <p>Explora tus personajes favoritos de Star Wars</p>
-                    </Carousel.Caption>
+                    <Link to="/people" className='mx-auto'>
+                        <img src={Characters} className="d-block w-100 rounded" />
+                        <Carousel.Caption className='d-flex flex-column'>
+                            <h1>Personajes</h1>
+                            <p>Explora tus personajes favoritos de Star Wars</p>
+                        </Carousel.Caption>
+                    </Link>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <img src={Movies} className="d-block w-100 rounded" />
-                    <Carousel.Caption className='d-flex flex-column'>
-                        <Link to="/" className='mx-auto'><h1>Películas</h1></Link>
-                        <p>Todas las películas de la saga</p>
-                    </Carousel.Caption>
+                    <Link to="/movies" className='mx-auto'>
+                        <img src={Movies} className="d-block w-100 rounded" />
+                        <Carousel.Caption className='d-flex flex-column'><h1>Películas</h1>
+                            <p>Todas las películas de la saga</p>
+                        </Carousel.Caption>
+                    </Link>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <img src={Ships} className="d-block w-100 rounded" />
-                    <Carousel.Caption className='d-flex flex-column'>
-                        <Link to="/" className='mx-auto'><h1>Naves</h1></Link>
-                        <p>Aquí podrás ver todas las naves y estaciones espaciales, desde el veloz Ala-X hasta la imponente Estrella de la Muerte</p>
-                    </Carousel.Caption>
+                    <Link to="/ships" className='mx-auto'>
+                        <img src={Ships} className="d-block w-100 rounded" />
+                        <Carousel.Caption className='d-flex flex-column'><h1>Naves</h1>
+                            <p>Aquí podrás ver todas las naves y estaciones espaciales, desde el veloz Ala-X hasta la imponente Estrella de la Muerte</p>
+                        </Carousel.Caption>
+                    </Link>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <img src={Vehicles} className="d-block w-100 rounded" />
-                    <Carousel.Caption className='d-flex flex-column'>
-                        <Link to="/" className='mx-auto'><h1>Vehículos</h1></Link>
-                        <p>Hay toda clase de vehículos terrestres, ¿cuál es tu favorito?</p>
-                    </Carousel.Caption>
+                    <Link to="/vehicles" className='mx-auto'>
+                        <img src={Vehicles} className="d-block w-100 rounded" />
+                        <Carousel.Caption className='d-flex flex-column'><h1>Vehículos</h1>
+                            <p>Hay toda clase de vehículos terrestres, ¿cuál es tu favorito?</p>
+                        </Carousel.Caption>
+                    </Link>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <img src={Species} className="d-block w-100 rounded" />
-                    <Carousel.Caption className='d-flex flex-column'>
-                        <Link to="/" className='mx-auto'><h1>Especies</h1></Link>
-                        <p>La galaxia es enorme y la variedad de especies es vastísima</p>
-                    </Carousel.Caption>
+                    <Link to="/species" className='mx-auto'>
+                        <img src={Species} className="d-block w-100 rounded" />
+                        <Carousel.Caption className='d-flex flex-column'><h1>Especies</h1>
+                            <p>La galaxia es enorme y la variedad de especies es vastísima</p>
+                        </Carousel.Caption>
+                    </Link>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <img src={Planets} className="d-block w-100 rounded" />
-                    <Carousel.Caption className='d-flex flex-column'>
-                        <Link to="/" className='mx-auto'><h1>Planetas</h1></Link>
-                        <p>Visita tu planeta favorito de la galaxia</p>
-                    </Carousel.Caption>
+                    <Link to="/planets" className='mx-auto'>
+                        <img src={Planets} className="d-block w-100 rounded" />
+                        <Carousel.Caption className='d-flex flex-column'><h1>Planetas</h1>
+                            <p>Visita tu planeta favorito de la galaxia</p>
+                        </Carousel.Caption>
+                    </Link>
                 </Carousel.Item>
             </Carousel>
         </div>
