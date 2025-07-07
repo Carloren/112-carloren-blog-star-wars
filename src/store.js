@@ -1,7 +1,8 @@
 export const initialStore = () => {
   return {
     message: null,
-    swPeople: []
+    swPeople: [],
+    swPeopleDetails: {}
   }
 }
 
@@ -13,6 +14,14 @@ export default function storeReducer(store, action = {}) {
         ...store,
         swPeople: action.payload
       };
+
+    case 'get_people_details':
+
+      return {
+        ...store,
+        swPeopleDetails: { ...store.swPeopleDetails, ["person" + action.payload.uid]: action.payload.properties }
+      };
+
     default:
       throw Error('Unknown action.');
   }

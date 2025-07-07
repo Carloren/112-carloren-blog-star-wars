@@ -3,27 +3,21 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { PeopleCard } from "../components/PeopleCard.jsx";
 import MainCarousel from "../components/MainCarousel.jsx";
 import { Link } from "react-router-dom";
+import { getPeople } from "../services/StarWarsServices.jsx";
+
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
-	function getPeople() {
-		fetch("https://www.swapi.tech/api/people")
-			.then(res => res.json())
-			.then(data => {
-				dispatch({ type: 'get_people', payload: data.results })
-				localStorage.setItem("people", JSON.stringify(data.results))
-			})
-			.catch(err => console.error(err))
-
-	}
-
 	useEffect(() => {
 		if (localStorage.getItem("people") != null) {
 			dispatch({ type: 'get_people', payload: JSON.parse(localStorage.getItem("people")) })
+
 		} else {
-			getPeople()
+
+			getPeople().then((data) => dispatch({ type: "get_people", payload: data }))
+
 		}
 	}, [])
 

@@ -1,9 +1,14 @@
+import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useEffect } from "react"
 import { useState } from "react"
+import { getPerson } from "../services/StarWarsServices.jsx";
 
 export const PeopleCard = ({ uid }) => {
+
+    const { store, dispatch } = useGlobalReducer()
+
 
     const [person, setPerson] = useState("")
     const [imageUrl, setImageUrl] = useState(() => {
@@ -43,24 +48,17 @@ export const PeopleCard = ({ uid }) => {
         }
     })
 
-    function getPerson(id) {
-        fetch("https://www.swapi.tech/api/people/" + id)
-            .then(res => res.json())
-            .then(data => {
-                setPerson(data.result.properties)
-                localStorage.setItem("person" + data.result.uid, JSON.stringify(data.result.properties))
-            })
-            .catch(err => console.error(err))
-
-    }
-
     useEffect(() => {
-        if (localStorage.getItem("person" + uid) != null) {
-            setPerson(JSON.parse(localStorage.getItem("person" + uid))) 
+        // if (localStorage.getItem("person" + uid) != null) {
+        //     setPerson(JSON.parse(localStorage.getItem("person" + uid)))
 
-        } else {
-            getPerson(uid)
-        }
+        // } else {
+            getPerson(uid).then((data) => setPerson(data.properties))
+            getPerson(uid).then((data) => dispatch({ type: "get_people_details", payload: data }))
+
+        // }
+
+        console.log("Gente: ", store.swPeopleDetails);         // NO GUARDA BIEN EL ESTADO GLOBAL, AQUÍ ME QUEDÉ
 
     }, [])
 
