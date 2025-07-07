@@ -2,7 +2,9 @@ export const initialStore = () => {
   return {
     message: null,
     swPeople: [],
-    swPeopleDetails: {}
+    swPeopleDetails: {},
+    swPlanets: [],
+    swPlanetsDetails: {}
   }
 }
 
@@ -20,6 +22,20 @@ export default function storeReducer(store, action = {}) {
       return {
         ...store,
         swPeopleDetails: { ...store.swPeopleDetails, ["person" + action.payload.uid]: action.payload.properties }
+      };
+
+    case 'get_planets':
+
+      return {
+        ...store,
+        swPlanets: action.payload
+      };
+
+    case 'get_planets_details':
+
+      return {
+        ...store,
+        swPlanetsDetails: { ...store.swPlanetsDetails, ["planet" + action.payload.uid]: action.payload.properties }
       };
 
     default:
