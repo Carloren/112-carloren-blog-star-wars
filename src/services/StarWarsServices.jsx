@@ -3,8 +3,8 @@ export async function getPeople() {
         let response = await fetch('https://www.swapi.tech/api/people')
         let data = await response.json()
         if (response.ok) {
-            localStorage.setItem("people", JSON.stringify(data.results))
-            return (data.results)
+            localStorage.setItem("people", JSON.stringify(data))
+            return (data)
         }
     }
     catch (error) {

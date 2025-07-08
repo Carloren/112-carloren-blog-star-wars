@@ -14,11 +14,11 @@ export const Home = () => {
 	useEffect(() => {
 		//------------------------CARGAR PERSONAS----------------------
 		if (localStorage.getItem("people") != null) {
-			dispatch({ type: 'get_people', payload: JSON.parse(localStorage.getItem("people")) })
+			dispatch({ type: 'get_people', payload: (JSON.parse(localStorage.getItem("people")).results) })
 
 		} else {
 
-			getPeople().then((data) => dispatch({ type: "get_people", payload: data }))
+			getPeople().then((data) => dispatch({ type: "get_people", payload: data.results }))
 
 		}
 		//------------------------CARGAR PLANETAS----------------------

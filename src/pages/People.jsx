@@ -15,7 +15,7 @@ export const People = () => {
         JSON.parse(localStorage.getItem("planets")).map((planet) => { (Object.values(planet)[2] === person.properties.homeworld) ? homeworld = (Object.values(planet)[1]) : "" })
 
         console.log(person.properties.homeworld);
-        
+
         console.log(homeworld);
 
 
@@ -41,7 +41,7 @@ export const People = () => {
         )
     } else {
 
-        let people = JSON.parse(localStorage.getItem("people"))
+        let people = (JSON.parse(localStorage.getItem("people"))).results
 
         return (
             <div className="container d-flex flex-column text-center">
