@@ -1,6 +1,6 @@
 export async function getPeople() {
     try {
-        let response = await fetch('https://www.swapi.tech/api/people')
+        let response = await fetch('https://www.swapi.tech/api/people/?expanded=true')
         let data = await response.json()
         if (response.ok) {
             localStorage.setItem("people", JSON.stringify(data))

@@ -45,6 +45,7 @@ export const Home = () => {
 					{store.swPeople.map((person) => (
 						<PeopleCard key={person.uid} uid={person.uid} />
 					))}
+					<Link to="/people" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>
 			<Link to="/planets" className="d-flex text-warning longTimeAgo">

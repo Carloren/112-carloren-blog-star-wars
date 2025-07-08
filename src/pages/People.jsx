@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PeopleCard } from "../components/PeopleCard";
 import { useParams } from "react-router-dom";
 import { getPeopleImages } from "../services/StarWarsServices";
+import { fullPeople } from "../assets/fullContent/fullPeople";
 
 export const People = () => {
 
@@ -41,13 +42,13 @@ export const People = () => {
         )
     } else {
 
-        let people = (JSON.parse(localStorage.getItem("people"))).results
+        // let people = (JSON.parse(localStorage.getItem("people"))).results
 
         return (
             <div className="container d-flex flex-column text-center">
                 <h2 className="text-info longTimeAgo">Personajes de la saga</h2>
                 <div className="row justify-content-center gx-3">
-                    {people.map((person) => (
+                    {fullPeople.map((person) => (
                         <PeopleCard key={person.uid} uid={person.uid} />
                     ))}
                 </div>

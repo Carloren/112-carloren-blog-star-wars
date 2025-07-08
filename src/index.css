@@ -76,8 +76,13 @@ body {
 
 .hide-scroll::-webkit-scrollbar-thumb:hover {
     background: cyan;
-
 }
+
+.btn-more{
+    vertical-align: middle;
+    padding-top: 16%;
+}
+
 
 .detail-title {
     font-size: 6rem;
