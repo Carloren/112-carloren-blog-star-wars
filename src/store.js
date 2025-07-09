@@ -1,10 +1,10 @@
 export const initialStore = () => {
   return {
     message: null,
-    swPeople: [],
-    swPeopleDetails: {},
-    swPlanets: [],
-    swPlanetsDetails: {}
+    swPeople: (localStorage.getItem("people") != null) ? JSON.parse(localStorage.getItem("people")) : [],
+    swFilms: (localStorage.getItem("films") != null) ? JSON.parse(localStorage.getItem("films")) : [],
+    swPlanets: (localStorage.getItem("planets") != null) ? JSON.parse(localStorage.getItem("planets")) : [],
+    favorites: (localStorage.getItem("favorites") != null) ? JSON.parse(localStorage.getItem("favorites")) : []
   }
 }
 
@@ -17,13 +17,6 @@ export default function storeReducer(store, action = {}) {
         swPeople: action.payload
       };
 
-    case 'get_people_details':
-
-      return {
-        ...store,
-        swPeopleDetails: { ...store.swPeopleDetails, ["person" + action.payload.uid]: action.payload.properties }
-      };
-
     case 'get_planets':
 
       return {
@@ -31,11 +24,18 @@ export default function storeReducer(store, action = {}) {
         swPlanets: action.payload
       };
 
-    case 'get_planets_details':
+    case 'get_films':
 
       return {
         ...store,
-        swPlanetsDetails: { ...store.swPlanetsDetails, ["planet" + action.payload.uid]: action.payload.properties }
+        swFilms: action.payload
+      };
+
+    case 'get_favorites':
+
+      return {
+        ...store,
+        favorites: store.favorites.concat(action.payload)
       };
 
     default:

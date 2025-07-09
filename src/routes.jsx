@@ -7,13 +7,12 @@ import {
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
-import { Single } from "./pages/Single";
 import { People } from "./pages/People";
-import { Movies } from "./pages/Movies";
 import { Ships } from "./pages/Ships";
 import { Vehicles } from "./pages/Vehicles";
 import { Species } from "./pages/Species";
 import { Planets } from "./pages/Planets";
+import { Films } from "./pages/Films";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +29,7 @@ export const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/people" element={<People />} />
       <Route path="/people/:id" element={<People />} />
-      <Route path="/movies" element={<Movies />} />
+      <Route path="/films" element={<Films />} />
       <Route path="/ships" element={<Ships />} />
       <Route path="/vehicles" element={<Vehicles />} />
       <Route path="/species" element={<Species />} />

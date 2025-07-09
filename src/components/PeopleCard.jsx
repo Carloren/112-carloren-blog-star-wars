@@ -1,29 +1,22 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
-import { useEffect } from "react"
-import { useState } from "react"
-import { getPeopleImages, getPerson } from "../services/StarWarsServices.jsx";
+import { useEffect, useState } from "react"
+import { getPeopleImages } from "../services/StarWarsImages.jsx";
 import { Link } from "react-router-dom";
 
-export const PeopleCard = ({ uid }) => {
+export const PeopleCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
+    const [person, setPerson] = useState(store.swPeople[index])
 
-    const [person, setPerson] = useState("")
+    function addFavorite(name, id) {
+        dispatch({ type: "get_favorites", payload: { group: "people", name: name, url: "/people/" + id, id: id } })
+    }
 
     useEffect(() => {
-        if (localStorage.getItem("peopleDetails") != null) {
-            dispatch({ type: "get_people_details", payload: (JSON.parse(localStorage.getItem("peopleDetails")))["person" + uid] })
-            setPerson((JSON.parse(localStorage.getItem("peopleDetails")))["person" + uid].properties);
-
-
-        } else {
-            getPerson(uid).then((data) => { dispatch({ type: "get_people_details", payload: data }) })
-            getPerson(uid).then((data) => setPerson(data.properties))
-        }
-
-    }, [])
+        localStorage.setItem("favorites", JSON.stringify(store.favorites))
+    }, [store.favorites])
 
     return (
         <div className="my-2 col-4">
@@ -34,7 +27,10 @@ export const PeopleCard = ({ uid }) => {
                     <Card.Text className='my-0'>Nacimiento: {person.birth_year}</Card.Text>
                     <Card.Text className='my-0'>Altura: {person.height}cm</Card.Text>
                     <Card.Text>Peso: {person.mass}kg</Card.Text>
-                    <Link to={"/people/" + uid} className="btn btn-info">Ficha completa</Link>
+                    <div className="d-flex">
+                        <Link to={"/people/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
+                        <button className="btn btn-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-solid fa-heart"></i></button> {/* fa-regular */}
+                    </div>
                 </Card.Body>
             </Card>
         </div>

@@ -4,9 +4,14 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import storeReducer from "../store";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 
 export const MyNavbar = () => {
+
+
+	const { store, dispatch } = useGlobalReducer()
 
 	return (
 		<Navbar expand="lg" className="bg-body-dark">
@@ -26,6 +31,17 @@ export const MyNavbar = () => {
 						<Form.Control type="search" placeholder="Buscar" className="me-2" aria-label="Search" />
 						<Button variant="outline-info">Buscar</Button>
 					</Form>
+					<div className="nav-item dropdown-end">
+						<a className="btn btn-outline-danger dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Favoritos
+						</a>
+
+						<ul className="dropdown-menu">
+							{(store.favorites).map((item) => {
+								return (<li key={item.id}><Link className="dropdown-item" to={item.url}>{item.name}</Link></li>)
+							})}
+						</ul>
+					</div>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar >
