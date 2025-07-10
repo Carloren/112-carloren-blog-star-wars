@@ -30,10 +30,15 @@ export const router = createBrowserRouter(
       <Route path="/people" element={<People />} />
       <Route path="/people/:id" element={<People />} />
       <Route path="/films" element={<Films />} />
+      <Route path="/films/:id" element={<Films />} />
       <Route path="/ships" element={<Ships />} />
+      <Route path="/ships/:id" element={<Ships />} />
       <Route path="/vehicles" element={<Vehicles />} />
+      <Route path="/vehicles/:id" element={<Vehicles />} />
       <Route path="/species" element={<Species />} />
+      <Route path="/species/:id" element={<Species />} />
       <Route path="/planets" element={<Planets />} />
+      <Route path="/planets/:id" element={<Planets />} />
     </Route>
   )
 );

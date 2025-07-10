@@ -13,13 +13,13 @@ export async function getPeople() {
     }
 }
 
-export async function getPlanets() {
+export async function getFilms() {
     try {
-        let response = await fetch('https://swapi.info/api/planets')
+        let response = await fetch('https://swapi.info/api/films')
         let data = await response.json()
         if (response.ok) {
             data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
-            localStorage.setItem("planets", JSON.stringify(data))
+            localStorage.setItem("films", JSON.stringify(data))
             return (data)
         }
     }
@@ -28,13 +28,58 @@ export async function getPlanets() {
     }
 }
 
-export async function getFilms() {
+export async function getShips() {
     try {
-        let response = await fetch('https://swapi.info/api/films')
+        let response = await fetch('https://swapi.info/api/starships')
         let data = await response.json()
         if (response.ok) {
             data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
-            localStorage.setItem("films", JSON.stringify(data))
+            localStorage.setItem("ships", JSON.stringify(data))
+            return (data)
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+export async function getVehicles() {
+    try {
+        let response = await fetch('https://swapi.info/api/vehicles')
+        let data = await response.json()
+        if (response.ok) {
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            localStorage.setItem("vehicles", JSON.stringify(data))
+            return (data)
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+export async function getSpecies() {
+    try {
+        let response = await fetch('https://swapi.info/api/species')
+        let data = await response.json()
+        if (response.ok) {
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            localStorage.setItem("species", JSON.stringify(data))
+            return (data)
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+export async function getPlanets() {
+    try {
+        let response = await fetch('https://swapi.info/api/planets')
+        let data = await response.json()
+        if (response.ok) {
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            localStorage.setItem("planets", JSON.stringify(data))
             return (data)
         }
     }
