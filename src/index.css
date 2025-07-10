@@ -4,7 +4,65 @@ body {
     background-size: 100%;
 }
 
-.longTimeAgo {
+.navbar-brand {
+    img {
+        transition: 0.5s;
+    }
+}
+
+.navbar-brand:hover {
+    img {
+        opacity: 0.7 !important;
+    }
+}
+
+.navbar-brand:active {
+    img {
+        opacity: 0.3 !important;
+    }
+}
+
+.navbar {
+    background-image: url("./assets/img/stars.jpg");
+    background-size: 100%;
+    box-shadow: black 0px 0px 15px 15px
+}
+
+.form-control {
+    background-color: black;
+}
+
+.form-control:focus {
+    background-color: black;
+    border-color: #0dcaf0;
+    box-shadow: #0dcaf0 0px 0px 10px 2px
+}
+
+.hide {
+    display: none;
+}
+
+li:hover>.hide {
+    display: block;
+}
+
+.crossButton {
+    font-size: large;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: white;
+}
+
+.crossButton:hover {
+    color: red !important;
+}
+
+.crossButton:active {
+    color: darkred !important;
+}
+
+.long-time-ago {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
 }
@@ -14,7 +72,7 @@ body {
     flex-grow: 1;
     height: 1px;
     background-color: white;
-    box-shadow: #0dcaf0 0px 0px 20px 5px
+    box-shadow: #0dcaf0 0px 0px 5px 3px
 }
 
 .carousel {
@@ -53,6 +111,11 @@ body {
     background-color: white !important
 }
 
+.card {
+    background: none;
+    border-color: #0dcaf0;
+}
+
 .hide-scroll {
     overflow-x: hidden;
     margin-bottom: 5px;
@@ -78,7 +141,7 @@ body {
     background: cyan;
 }
 
-.btn-more{
+.btn-more {
     vertical-align: middle;
     padding-top: 16%;
 }
@@ -94,6 +157,6 @@ body {
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-.detail-box{
+.detail-box {
     box-shadow: #0dcaf0 0px 0px 20px 5px
 }

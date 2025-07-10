@@ -10,8 +10,18 @@ export const PeopleCard = ({ uid, index }) => {
 
     const [person, setPerson] = useState(store.swPeople[index])
 
+    const button = (store.favorites.find((item) => item.url === "/people/" + uid) != null) ?
+        (<button className="btn btn-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-solid fa-heart"></i></button>)
+        :
+        (<button className="btn btn-outline-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-regular fa-heart"></i></button>)
+
     function addFavorite(name, id) {
-        dispatch({ type: "get_favorites", payload: { group: "people", name: name, url: "/people/" + id, id: id } })
+        if (store.favorites.find((item) => item.url === "/people/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/people/" + id) })
+
+        } else {
+            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "people", name: name, url: "/people/" + id, id: id }) })
+        }
     }
 
     useEffect(() => {
@@ -29,7 +39,7 @@ export const PeopleCard = ({ uid, index }) => {
                     <Card.Text>Peso: {person.mass}kg</Card.Text>
                     <div className="d-flex">
                         <Link to={"/people/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
-                        <button className="btn btn-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-solid fa-heart"></i></button> {/* fa-regular */}
+                        {button}
                     </div>
                 </Card.Body>
             </Card>

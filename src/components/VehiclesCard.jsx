@@ -10,8 +10,18 @@ export const VehiclesCard = ({ uid, index }) => {
 
     const [vehicle, setVehicle] = useState(store.swVehicles[index])
 
+    const button = (store.favorites.find((item) => item.url === "/vehicles/" + uid) != null) ?
+        (<button className="btn btn-danger" onClick={() => addFavorite(vehicle.name, uid)}><i className="fa-solid fa-heart"></i></button>)
+        :
+        (<button className="btn btn-outline-danger" onClick={() => addFavorite(vehicle.name, uid)}><i className="fa-regular fa-heart"></i></button>)
+
     function addFavorite(name, id) {
-        dispatch({ type: "get_favorites", payload: { group: "vehicles", name: name, url: "/vehicles/" + id, id: id } })
+        if (store.favorites.find((item) => item.url === "/vehicles/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/vehicles/" + id) })
+
+        } else {
+            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "vehicles", name: name, url: "/vehicles/" + id, id: id }) })
+        }
     }
 
     useEffect(() => {
@@ -29,7 +39,7 @@ export const VehiclesCard = ({ uid, index }) => {
                     <Card.Text>Coste: {vehicle.cost_in_credits} créditos</Card.Text>
                     <div className="d-flex">
                         <Link to={"/vehicles/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
-                        <button className="btn btn-danger" onClick={() => addFavorite(vehicle.name, uid)}><i className="fa-solid fa-heart"></i></button> {/* fa-regular */}
+                        {button}
                     </div>
                 </Card.Body>
             </Card>

@@ -7,7 +7,7 @@ export const Planets = () => {
 
     return (
         <div className="container d-flex flex-column text-center">
-            <h2 className="text-info" id="longTimeAgo">Planetas de la galaxia</h2>
+            <h2 className="text-info" id="long-time-ago">Planetas de la galaxia</h2>
             <div className="row justify-content-center gx-3">
                 {planets.map((planet) => (
                     <PlanetsCard key={planet.uid} uid={planet.uid} />

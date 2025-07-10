@@ -56,10 +56,10 @@ export const Home = () => {
 	}, [])
 
 	return (
-		<div className="container text-center mt-5">
-			<h2 className="text-info mb-5 longTimeAgo">Hace mucho tiempo, en una galaxia muy muy lejana...</h2>
+		<div className="container text-center mt-5 pt-5">
+			<h2 className="text-info mb-5 long-time-ago">Hace mucho tiempo, en una galaxia muy muy lejana...</h2>
 			<MainCarousel />														{/*-------PERSONAS------- */}
-			<Link to="/people/" className="d-flex text-warning longTimeAgo">
+			<Link to="/people/" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Personajes</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
@@ -75,7 +75,7 @@ export const Home = () => {
 					<Link to="/people" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>																	{/*-------PELÍCULAS------- */}
-			<Link to="/films" className="d-flex text-warning longTimeAgo">
+			<Link to="/films" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Películas</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
@@ -91,7 +91,7 @@ export const Home = () => {
 					<Link to="/films" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>																	{/*-------NAVES------- */}
-			<Link to="/ships" className="d-flex text-warning longTimeAgo">
+			<Link to="/ships" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Naves</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
@@ -107,7 +107,7 @@ export const Home = () => {
 					<Link to="/ships" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>																	{/*-------VEHÍCULOS------- */}
-			<Link to="/vehicles" className="d-flex text-warning longTimeAgo">
+			<Link to="/vehicles" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Vehículos</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
@@ -123,7 +123,7 @@ export const Home = () => {
 					<Link to="/vehicles" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>																	{/*-------ESPECIES------- */}
-			<Link to="/species" className="d-flex text-warning longTimeAgo">
+			<Link to="/species" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Especies</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
@@ -139,7 +139,7 @@ export const Home = () => {
 					<Link to="/species" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>																	{/*-------PLANETAS------- */}
-			<Link to="/planets" className="d-flex text-warning longTimeAgo">
+			<Link to="/planets" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Planetas</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
@@ -155,6 +155,7 @@ export const Home = () => {
 					<Link to="/planets" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
 				</div>
 			</div>
+			<a className="btn btn-warning mx-auto mt-5" href="#">Volver arriba</a>
 		</div>
 	);
 }; 

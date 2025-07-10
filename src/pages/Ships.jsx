@@ -9,7 +9,7 @@ export const Ships = () => {
 
     return (
         <div className="container d-flex flex-column text-center">
-            <h2 className="text-info" id="longTimeAgo">Personajes de la saga</h2>
+            <h2 className="text-info" id="long-time-ago">Personajes de la saga</h2>
             <div className="row justify-content-center gx-3">
                 {people.map((person) => (
                     <PeopleCard key={person.uid} uid={person.uid} />

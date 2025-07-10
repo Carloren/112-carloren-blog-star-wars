@@ -10,8 +10,18 @@ export const PlanetsCard = ({ uid, index }) => {
 
     const [planet, setPlanet] = useState(store.swPlanets[index])
 
+    const button = (store.favorites.find((item) => item.url === "/planets/" + uid) != null) ?
+        (<button className="btn btn-danger" onClick={() => addFavorite(planet.name, uid)}><i className="fa-solid fa-heart"></i></button>)
+        :
+        (<button className="btn btn-outline-danger" onClick={() => addFavorite(planet.name, uid)}><i className="fa-regular fa-heart"></i></button>)
+
     function addFavorite(name, id) {
-        dispatch({ type: "get_favorites", payload: { group: "planets", name: name, url: "/planets/" + id, id: id } })
+        if (store.favorites.find((item) => item.url === "/planets/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/planets/" + id) })
+
+        } else {
+            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "planets", name: name, url: "/planets/" + id, id: id }) })
+        }
     }
 
     useEffect(() => {
@@ -29,7 +39,7 @@ export const PlanetsCard = ({ uid, index }) => {
                     <Card.Text>Peso: {planet.mass}kg</Card.Text>
                     <div className="d-flex">
                         <Link to={"/planets/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
-                        <button className="btn btn-danger" onClick={() => addFavorite(planet.name, uid)}><i className="fa-solid fa-heart"></i></button> {/* fa-regular */}
+                        {button}
                     </div>
                 </Card.Body>
             </Card>

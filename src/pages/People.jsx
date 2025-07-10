@@ -43,7 +43,7 @@ export const People = () => {
 
         return (
             <div className="container d-flex flex-column text-center">
-                <h2 className="text-info longTimeAgo">Personajes de la saga</h2>
+                <h2 className="text-info long-time-ago">Personajes de la saga</h2>
                 <div className="row justify-content-center gx-3">
                     {store.swPeople.map((person, index) => (
                         <PeopleCard key={index} uid={person.url.match(/(\d+)/)[0]} index={index} />

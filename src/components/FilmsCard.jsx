@@ -8,10 +8,20 @@ export const FilmsCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [film, setPerson] = useState(store.swFilms[index])
+    const [film, setFilm] = useState(store.swFilms[index])
+
+    const button = (store.favorites.find((item) => item.url === "/films/" + uid) != null) ?
+        (<button className="btn btn-danger" onClick={() => addFavorite(film.title, uid)}><i className="fa-solid fa-heart"></i></button>)
+        :
+        (<button className="btn btn-outline-danger" onClick={() => addFavorite(film.title, uid)}><i className="fa-regular fa-heart"></i></button>)
 
     function addFavorite(name, id) {
-        dispatch({ type: "get_favorites", payload: { group: "films", name: name, url: "/films/" + id, id: id } })
+        if (store.favorites.find((item) => item.url === "/films/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/films/" + id) })
+
+        } else {
+            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "films", name: name, url: "/films/" + id, id: id }) })
+        }
     }
 
     useEffect(() => {
@@ -29,7 +39,7 @@ export const FilmsCard = ({ uid, index }) => {
                     <Card.Text>Estreno: {film.release_date}</Card.Text>
                     <div className="d-flex">
                         <Link to={"/films/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
-                        <button className="btn btn-danger" onClick={() => addFavorite(film.title, uid)}><i className="fa-solid fa-heart"></i></button> {/* fa-regular */}
+                        {button}
                     </div>
                 </Card.Body>
             </Card>

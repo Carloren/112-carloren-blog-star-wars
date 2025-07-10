@@ -43,7 +43,7 @@ export const Films = () => {
 
         return (
             <div className="container d-flex flex-column text-center">
-                <h2 className="text-info longTimeAgo">Saga de películas</h2>
+                <h2 className="text-info long-time-ago">Saga de películas</h2>
                 <div className="row justify-content-center gx-3">
                     {store.swFilms.map((films, index) => (
                         <FilmsCard key={index} uid={films.url.match(/(\d+)/)[0]} index={index} />

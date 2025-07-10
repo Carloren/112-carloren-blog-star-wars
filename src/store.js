@@ -59,7 +59,7 @@ export default function storeReducer(store, action = {}) {
 
       return {
         ...store,
-        favorites: store.favorites.concat(action.payload)
+        favorites: action.payload
       };
 
     default:
