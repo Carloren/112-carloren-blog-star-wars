@@ -160,3 +160,18 @@ li:hover>.hide {
 .detail-box {
     box-shadow: #0dcaf0 0px 0px 20px 5px
 }
+
+.nav-page {
+    color: #0dcaf0 !important;
+    border: 1px solid transparent;
+}
+
+.nav-page:hover {
+    color: #0dcaf0 !important;
+    border: 1px solid #0dcaf0;
+}
+
+.nav-page.active {
+    background-color: #0dcaf0 !important;
+    color: black !important;
+}

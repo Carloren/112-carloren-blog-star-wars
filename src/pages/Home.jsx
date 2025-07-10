@@ -53,10 +53,19 @@ export const Home = () => {
 			getPlanets().then((data) => dispatch({ type: "get_planets", payload: data }))
 
 		}
+		let print = ""
+		for (let index = 1; index <= 83; index++) {
+			print += `
+				
+        case ${index}:
+            return "https://lumiere-a.akamaihd.net/v1/images/obi-wan-kenobi-main_3286c63c.jpeg?region=0%2C0%2C1280%2C721"`
+		}
+		console.log(print);
+		
 	}, [])
 
 	return (
-		<div className="container text-center mt-5 pt-5">
+		<div className="container text-center mt-5">
 			<h2 className="text-info mb-5 long-time-ago">Hace mucho tiempo, en una galaxia muy muy lejana...</h2>
 			<MainCarousel />														{/*-------PERSONAS------- */}
 			<Link to="/people/" className="d-flex text-warning long-time-ago">
