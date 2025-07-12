@@ -3,6 +3,7 @@ import { PeopleCard } from "../components/PeopleCard";
 import { Link, useParams } from "react-router-dom";
 import { getPeopleImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
+import { getName } from "../services/StarWarsServices";
 
 export const People = () => {
 
@@ -25,8 +26,6 @@ export const People = () => {
 
         const person = store.swPeople.find((item) => item.uid === useParams().id)
 
-        const homeworld = <Link to={"/planets/" + store.swPlanets.find((item) => item.url === person.homeworld).uid} className="detail-link">{store.swPlanets.find((item) => item.url === person.homeworld).name}</Link>
-
         const button = (store.favorites.find((item) => item.url === "/people/" + person.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
@@ -47,11 +46,11 @@ export const People = () => {
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
                     <img className="rounded-top w-100 detail-image" src={getPeopleImages(person.uid)} />
-                    <h1 className="detail-title position-absolute bottom-0">{person.name}</h1>
+                    <h1 className="detail-title ps-4 position-absolute bottom-0">{person.name}</h1>
                 </div>
                 <div className="container row row-cols2">
                     <p className="col-6 fs-2 ps-4">Nacimiento: {person.birth_year}</p>
-                    <p className="col-6 fs-2 ps-4">Planeta natal: {homeworld}</p>
+                    <p className="col-6 fs-2 ps-4">Planeta natal: {getName(person.homeworld, store.swPlanets)}</p>
                     <p className="col-6 fs-2 ps-4">Género: {person.gender}</p>
                     <p className="col-6 fs-2 ps-4">Piel: {person.skin_color}</p>
                     <p className="col-6 fs-2 ps-4">Altura: {person.height}cm</p>

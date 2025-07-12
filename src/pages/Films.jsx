@@ -3,7 +3,7 @@ import { FilmsCard } from "../components/FilmsCard";
 import { Link, useParams } from "react-router-dom";
 import { getFilmsImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { tradEpisode } from "../services/StarWarsServices";
+import { getName, tradEpisode } from "../services/StarWarsServices";
 
 export const Films = () => {
 
@@ -12,11 +12,6 @@ export const Films = () => {
     if (useParams().id != null) {
 
         const film = store.swFilms.find((item) => item.uid === useParams().id)
-
-        // const homeworld = <Link to={"/planets/" + store.swPlanets.find((item) => item.url === film.homeworld).uid} className="detail-link">{store.swPlanets.find((item) => item.url === film.homeworld).name}</Link>
-        // const person = <Link to={"/people/" + store.swPeople.find((item) => item.url === film.homeworld).uid} className="detail-link">{store.swPlanets.find((item) => item.url === film.homeworld).name}</Link>
-
-        const charName = (url)=> store.swPeople.find((item) => item.url === url).name
 
         const button = (store.favorites.find((item) => item.url === "/films/" + film.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(film.name, film.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
@@ -38,26 +33,17 @@ export const Films = () => {
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
                     <img className="rounded-top w-100 detail-image" src={getFilmsImages(film.uid)} />
-                    <div className="detail-title position-absolute bottom-0">
+                    <div className="detail-title ps-4 position-absolute bottom-0">
                         <h1>{film.title}</h1>
-                        <h5>Episodio {tradEpisode(film.episode_id)}</h5>
+                        <h5 className="">Episodio {tradEpisode(film.episode_id)}</h5>
                     </div>
                 </div>
-                <div className="container row row-cols2">
-                    <p className="fs-5 ps-4 text-warning fw-bold my-0">{film.opening_crawl}</p>
-                    <p className="fs-5 ps-4 my-0">Director: {film.director}</p>
-                    <p className="fs-5 ps-4 my-0">Productores: {film.producer}</p>
-                    <p className="fs-5 ps-4 my-0">Personajes: {film.characters.map((character) => character + ", ")}</p>
-                    <div className="col-6 fs-2 ps-4">
-                        <p>Piel: {film.skin_color}</p>
-                        <p>Peso: {film.mass}kg</p>
-                        <p>Ojos: {film.eye_color}</p>
-                    </div>
-
-                    <div className="col-6 fs-2 ps-4">
-                        <p>Altura: {film.height}cm</p>
-                        <p>Pelo: {film.hair_color}</p>
-                    </div>
+                <div className="container ms-0 row row-cols2">
+                    <p className="fs-5 ps-4 text-warning fw-bold my-0 text-justify">{film.opening_crawl}</p>
+                    <p className="fs-5 ps-4 my-0">Director: <i>{film.director}</i></p>
+                    <p className="fs-5 ps-4 my-0">Productores: <i>{film.producer}</i></p>
+                    <p className="fs-5 ps-4 my-0 text-justify">Personajes: {film.characters.map((url, index) => index != (film.characters.length - 1) ? <i key={index}>{getName(url, store.swPeople)}, </i> : <i key={index}>{getName(url, store.swPeople)}.</i>)}</p>
+                    {/* <p className="fs-5 ps-4 my-0 text-justify">Planetas: {film.characters.map((url, index) => index != (film.characters.length - 1) ? <i>{getName(url, store.swPlanets)}, </i> : <i>{getName(url, store.swPlanets)}.</i>)}</p> */}
                 </div>
                 <div className="divider mx-5"></div>
                 {button}

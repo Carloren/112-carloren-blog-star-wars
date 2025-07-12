@@ -4,6 +4,10 @@ body {
     background-size: 100%;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 .navbar-brand {
     img {
         transition: 0.5s;
@@ -148,7 +152,6 @@ li:hover>.hide {
 
 .detail-title {
     font-size: 6rem;
-    padding-left: 1rem;
     text-shadow: black 0px 0px 10px !important;
 
     h1 {
@@ -156,8 +159,6 @@ li:hover>.hide {
     }
 
     h5 {
-        padding: 0;
-        padding-left: 0.45rem;
         margin-top: -1em;
     }
 }

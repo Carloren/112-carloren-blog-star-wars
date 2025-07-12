@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom"
+
 export async function getPeople() {
     try {
         let response = await fetch('https://swapi.info/api/people')
         let data = await response.json()
         if (response.ok) {
-            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/people/" + item.url.match(/(\d+)/)[0] } })
             localStorage.setItem("people", JSON.stringify(data))
             return (data)
         }
@@ -18,7 +20,7 @@ export async function getFilms() {
         let response = await fetch('https://swapi.info/api/films')
         let data = await response.json()
         if (response.ok) {
-            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/films/" + item.url.match(/(\d+)/)[0] } })
             localStorage.setItem("films", JSON.stringify(data))
             return (data)
         }
@@ -52,7 +54,7 @@ export async function getShips() {
         let response = await fetch('https://swapi.info/api/starships')
         let data = await response.json()
         if (response.ok) {
-            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/ships/" + item.url.match(/(\d+)/)[0] } })
             localStorage.setItem("ships", JSON.stringify(data))
             return (data)
         }
@@ -67,7 +69,7 @@ export async function getVehicles() {
         let response = await fetch('https://swapi.info/api/vehicles')
         let data = await response.json()
         if (response.ok) {
-            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/vehicles/" + item.url.match(/(\d+)/)[0] } })
             localStorage.setItem("vehicles", JSON.stringify(data))
             return (data)
         }
@@ -82,7 +84,7 @@ export async function getSpecies() {
         let response = await fetch('https://swapi.info/api/species')
         let data = await response.json()
         if (response.ok) {
-            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/species/" + item.url.match(/(\d+)/)[0] } })
             localStorage.setItem("species", JSON.stringify(data))
             return (data)
         }
@@ -97,7 +99,7 @@ export async function getPlanets() {
         let response = await fetch('https://swapi.info/api/planets')
         let data = await response.json()
         if (response.ok) {
-            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0] } })
+            data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/planets/" + item.url.match(/(\d+)/)[0] } })
             localStorage.setItem("planets", JSON.stringify(data))
             return (data)
         }
@@ -106,3 +108,8 @@ export async function getPlanets() {
         console.log(error);
     }
 }
+
+export const getName = (url, group) => group[0].name != null ?
+    <Link to={group.find((item) => item.url === url).page} className="detail-link">{group.find((item) => item.url === url).name}</Link>
+    :
+    group.find((item) => item.url === url).title;
