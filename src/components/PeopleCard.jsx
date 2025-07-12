@@ -18,7 +18,6 @@ export const PeopleCard = ({ uid, index }) => {
     function addFavorite(name, id) {
         if (store.favorites.find((item) => item.url === "/people/" + id) != null) {
             dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/people/" + id) })
-
         } else {
             dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "people", name: name, url: "/people/" + id, id: id }) })
         }

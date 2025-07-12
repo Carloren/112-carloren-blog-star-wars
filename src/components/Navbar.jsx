@@ -35,7 +35,7 @@ export const MyNavbar = () => {
 						<div className="offcanvas-body d-flex">
 							<ul className="navbar-nav justify-content-start flex-grow-1">
 								<li className="nav-link px-0"><Link to="/people" className="nav-link">Personajes</Link></li>
-								<li className="nav-link px-0"><Link to="/movies" className="nav-link">Películas</Link></li>
+								<li className="nav-link px-0"><Link to="/films" className="nav-link">Películas</Link></li>
 								<li className="nav-link px-0"><Link to="/ships" className="nav-link">Naves</Link></li>
 								<li className="nav-link px-0"><Link to="/vehicles" className="nav-link">Vehículos</Link></li>
 								<li className="nav-link px-0"><Link to="/species" className="nav-link">Especies</Link></li>

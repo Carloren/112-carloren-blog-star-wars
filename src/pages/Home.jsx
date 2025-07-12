@@ -53,15 +53,16 @@ export const Home = () => {
 			getPlanets().then((data) => dispatch({ type: "get_planets", payload: data }))
 
 		}
-		let print = ""
-		for (let index = 1; index <= 83; index++) {
-			print += `
+		// let print = ""
+		// for (let index = 0; index < JSON.parse(localStorage.getItem("ships")).length; index++) {
+		// 	print += `
 				
-        case ${index}:
-            return "https://lumiere-a.akamaihd.net/v1/images/obi-wan-kenobi-main_3286c63c.jpeg?region=0%2C0%2C1280%2C721"`
-		}
-		console.log(print);
+        // case ${JSON.parse(localStorage.getItem("ships"))[index].uid}:
+        //     return ""`
+		// console.log(print);
 		
+		// }
+
 	}, [])
 
 	return (
@@ -77,7 +78,7 @@ export const Home = () => {
 					{store.swPeople.map((person, index) => {
 						if (index < 10) {
 							return (
-								<PeopleCard key={index} uid={person.url.match(/(\d+)/)[0]} index={index} />
+								<PeopleCard key={index} uid={person.uid} index={index} />
 							)
 						}
 					})}
@@ -93,7 +94,7 @@ export const Home = () => {
 					{store.swFilms.map((film, index) => {
 						if (index < 10) {
 							return (
-								<FilmsCard key={index} uid={film.url.match(/(\d+)/)[0]} index={index} />
+								<FilmsCard key={index} uid={film.uid} index={index} />
 							)
 						}
 					})}
@@ -109,7 +110,7 @@ export const Home = () => {
 					{store.swShips.map((film, index) => {
 						if (index < 10) {
 							return (
-								<ShipsCard key={index} uid={film.url.match(/(\d+)/)[0]} index={index} />
+								<ShipsCard key={index} uid={film.uid} index={index} />
 							)
 						}
 					})}
@@ -125,7 +126,7 @@ export const Home = () => {
 					{store.swVehicles.map((film, index) => {
 						if (index < 10) {
 							return (
-								<VehiclesCard key={index} uid={film.url.match(/(\d+)/)[0]} index={index} />
+								<VehiclesCard key={index} uid={film.uid} index={index} />
 							)
 						}
 					})}
@@ -141,7 +142,7 @@ export const Home = () => {
 					{store.swSpecies.map((film, index) => {
 						if (index < 10) {
 							return (
-								<SpeciesCard key={index} uid={film.url.match(/(\d+)/)[0]} index={index} />
+								<SpeciesCard key={index} uid={film.uid} index={index} />
 							)
 						}
 					})}
@@ -157,7 +158,7 @@ export const Home = () => {
 					{store.swPlanets.map((planet, index) => {
 						if (index < 10) {
 							return (
-								<PlanetsCard key={index} uid={planet.url.match(/(\d+)/)[0]} index={index} />
+								<PlanetsCard key={index} uid={planet.uid} index={index} />
 							)
 						}
 					})}

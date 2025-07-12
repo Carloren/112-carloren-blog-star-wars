@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Characters from '../assets/img/characters.jpg'
-import Movies from '../assets/img/movies.jpg'
+import Movies from '../assets/img/films.jpg'
 import Ships from '../assets/img/ships.jpg'
 import Vehicles from '../assets/img/vehicles.jpg'
 import Species from '../assets/img/species.jpg'
@@ -21,7 +21,7 @@ function MainCarousel() {
                     </Link>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <Link to="/movies" className='mx-auto'>
+                    <Link to="/films" className='mx-auto'>
                         <img src={Movies} className="d-block w-100 rounded" />
                         <Carousel.Caption className='d-flex flex-column'><h1>Películas</h1>
                             <p>Todas las películas de la saga</p>

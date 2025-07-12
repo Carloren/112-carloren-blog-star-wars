@@ -146,11 +146,20 @@ li:hover>.hide {
     padding-top: 16%;
 }
 
-
 .detail-title {
     font-size: 6rem;
-    padding-left: 20px;
-    text-shadow: black 0px 0px 10px !important
+    padding-left: 1rem;
+    text-shadow: black 0px 0px 10px !important;
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    h5 {
+        padding: 0;
+        padding-left: 0.45rem;
+        margin-top: -1em;
+    }
 }
 
 .detail-image {
@@ -174,4 +183,19 @@ li:hover>.hide {
 .nav-page.active {
     background-color: #0dcaf0 !important;
     color: black !important;
+}
+
+.detail-link {
+    text-decoration: none !important;
+    color: #0dcaf0;
+    transition: 0.3s;
+
+}
+
+.detail-link:hover {
+    color: white;
+}
+
+.detail-link:active {
+    color: #0dcaf0;
 }

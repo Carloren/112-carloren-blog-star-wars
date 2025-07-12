@@ -25,7 +25,7 @@ export const People = () => {
 
         const person = store.swPeople.find((item) => item.uid === useParams().id)
 
-        let homeworld = ""
+        const homeworld = <Link to={"/planets/" + store.swPlanets.find((item) => item.url === person.homeworld).uid} className="detail-link">{store.swPlanets.find((item) => item.url === person.homeworld).name}</Link>
 
         const button = (store.favorites.find((item) => item.url === "/people/" + person.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
