@@ -31,7 +31,7 @@ export const ShipsCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" src={getShipsImages(uid)} />
+                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getShipsImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{ship.name}</Card.Title>
                     <Card.Text className='my-0'>Fabricante: {ship.manufacturer}</Card.Text>

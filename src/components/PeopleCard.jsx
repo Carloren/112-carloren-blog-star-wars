@@ -30,12 +30,12 @@ export const PeopleCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" src={getPeopleImages(uid)} />
+                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getPeopleImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{person.name}</Card.Title>
-                    <Card.Text className='my-0'>Nacimiento: {person.birth_year}</Card.Text>
-                    <Card.Text className='my-0'>Altura: {person.height}cm</Card.Text>
-                    <Card.Text>Peso: {person.mass}kg</Card.Text>
+                    <Card.Text className='my-0'>Nacimiento: <i>{person.birth_year === "unknown" ? "desconocido" : person.birth_year}</i></Card.Text>
+                    <Card.Text className='my-0'>Altura: <i>{person.height === "unknown" ? "desconocida" : person.height + "cm"}</i></Card.Text>
+                    <Card.Text>Peso: <i>{person.mass === "unknown" ? "desconocido" : person.mass + "kg"}</i></Card.Text>
                     <div className="d-flex">
                         <Link to={"/people/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
                         {button}

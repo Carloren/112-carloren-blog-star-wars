@@ -82,7 +82,7 @@ export function getPeopleImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/mon-mothma-main_effb3e9c.jpeg?region=168%2C0%2C944%2C531"
 
         case 29:
-            return "https://i.ibb.co/hFnTz1Zc/Arvel-Crynyd.jpg"
+            return "https://static.wikia.nocookie.net/esstarwars/images/d/de/Arvel-crynyd.jpg/revision/latest?cb=20180818202306"
 
         case 30:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_wickettwwarrick_01_169_86d1210c.jpeg?region=0%2C0%2C1560%2C878"
@@ -139,7 +139,7 @@ export function getPeopleImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/databank_rattstyerell_01_169_031aea6d.jpeg?region=0%2C0%2C1560%2C878"
 
         case 48:
-            return "https://i.ibb.co/pBQLqdJH/Arvel-Crynyd.jpg"
+            return "https://static.wikia.nocookie.net/starwars/images/7/73/Dud_Bolt_Podracer_Cockpit.png/revision/latest?cb=20141214155313"
 
         case 49:
             return "https://lumiere-a.akamaihd.net/v1/images/gasgano_6f648f83.jpeg?region=0%2C48%2C2252%2C1267"
@@ -178,7 +178,7 @@ export function getPeopleImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/captain-typho_f9e8d7bd.jpeg?region=0%2C0%2C1186%2C668"
 
         case 61:
-            return "https://i.postimg.cc/RhVK20Pk/Cord.jpg"
+            return "https://static.wikia.nocookie.net/esstarwars/images/b/b6/Cord%C3%A9_-_SW_Card_Trader.png/revision/latest?cb=20190310031832"
 
         case 62:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_cliegglars_01_169_c2f0b9cb.jpeg?region=0%2C0%2C1560%2C878"
@@ -280,112 +280,112 @@ export function getShipsImages(uid) {
     switch (parseInt(uid)) {
 
         case 2:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/hammerhead-corvette-rogue-update_453ce60b.jpeg?region=154%2C0%2C892%2C502"
 
         case 3:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/Star-Destroyer_ab6b94bb.jpeg?region=0%2C0%2C1600%2C900"
 
         case 5:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/Imperial-Sentinel-Class-Shuttle_a2dc7d3b.jpeg?region=0%2C0%2C1596%2C898"
 
         case 9:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C0%2C1600%2C900"
 
         case 10:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/62ebc4e2d7e2f300010cd93a-image_d060a561.jpeg?region=0%2C0%2C1536%2C864"
 
         case 11:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/Y-Wing-Fighter_0e78c9ae.jpeg?region=0%2C0%2C1536%2C864"
 
         case 12:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/resistance-x-wing_9433981f.jpeg?region=0%2C0%2C1560%2C878"
 
         case 13:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/image_3aaf40b1.jpeg?region=0%2C0%2C1920%2C1080"
 
         case 15:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_executor_01_169_8157df82.jpeg?region=57%2C0%2C1503%2C845"
 
         case 17:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/gr-75-medium-transport_cd04862d.jpeg?region=15%2C0%2C770%2C433"
 
         case 21:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/zygerrian_slave_ship_e5edce00.jpeg?region=206%2C0%2C1420%2C799"
 
         case 22:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/veh_ia_1752_040381b2.jpeg?region=0%2C70%2C1280%2C720"
 
         case 23:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/nebulon-b-frigate_dce53bc2.jpeg?region=0%2C0%2C1181%2C664"
 
         case 27:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/e6d_ia_2581_47f64de7.jpeg?region=254%2C0%2C1426%2C802"
 
         case 28:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/screen_shot_2015-05-26_at_5_16a39e17.png?region=0%2C71%2C812%2C457"
 
         case 29:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_bwingfighter_01_169_460cc528.jpeg?region=0%2C0%2C1560%2C878"
 
         case 31:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_republicattackcruiser_01_169_812f153d.jpeg?region=0%2C0%2C1560%2C878"
 
         case 32:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_tradefederationbattleship_01_169_fc5458ce.jpeg?region=0%2C0%2C1560%2C878"
 
         case 39:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_naboon1starfighter_01_169_26691adf.jpeg?region=0%2C0%2C1560%2C878"
 
         case 40:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_nabooroyalstarship_01_169_e61f677e.jpeg?region=0%2C0%2C1560%2C878"
 
         case 41:
-            return ""
+            return "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84d44311-4aa5-472d-b391-42b113229ca0/ddemjhg-271ce35e-ea5b-455c-b696-4a7a44dbd042.png/v1/fill/w_1280,h_655,q_80,strp/the_scimitar_by_boskov01_ddemjhg-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjU1IiwicGF0aCI6IlwvZlwvODRkNDQzMTEtNGFhNS00NzJkLWIzOTEtNDJiMTEzMjI5Y2EwXC9kZGVtamhnLTI3MWNlMzVlLWVhNWItNDU1Yy1iNjk2LTRhN2E0NGRiZDA0Mi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.sW8uS7gnADz3zcyeI2SGirIxD2-8J5JMpUin9uny50A"
 
         case 43:
-            return ""
+            return "https://static.wikia.nocookie.net/starwars/images/1/1b/NabooRoyalCruiser-CGSWG.png/revision/latest/scale-to-width-down/1200?cb=20250206064245"
 
         case 47:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/aa-9-coruscant-freighter_a856053d.jpeg?region=92%2C0%2C1181%2C665"
 
         case 48:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/delta-7-starfighter_fe9a59bc.jpeg?region=0%2C304%2C1560%2C873"
 
         case 49:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/h-type-nubian-yacht_7d67bc00.jpeg?region=0%2C0%2C1181%2C663"
 
         case 52:
-            return ""
+            return "https://static.wikia.nocookie.net/starwars/images/f/fe/Acclamator_I_ships.png/revision/latest?cb=20201206074714"
 
         case 58:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_geonosiansolarsailer_01_169_b3873578.jpeg?region=0%2C0%2C1560%2C878"
 
         case 59:
-            return ""
+            return "https://swrpggm.com/wp-content/uploads/2021/02/Providence_FE.png"
 
         case 61:
-            return ""
+            return "https://cdnb.artstation.com/p/assets/images/images/011/213/673/large/tyler-harris-vadertransport.jpg?1528395146"
 
         case 63:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_republicattackcruiser_01_169_812f153d.jpeg?region=0%2C0%2C1560%2C878"
 
         case 64:
-            return ""
+            return "https://static.wikia.nocookie.net/starwars/images/d/df/Naboo_star_skiff_1.png/revision/latest/scale-to-width-down/1919?cb=20130212042348"
 
         case 65:
-            return ""
+            return "https://www.brickfanatics.com/wp-content/uploads/2024/07/Star-Wars-The-Clone-Wars-Ahsoka-Eta-2-Interceptor.jpg"
 
         case 66:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_arc170starfighter_01_169_f932abcb.jpeg?region=0%2C0%2C1560%2C878"
 
         case 68:
-            return ""
+            return "https://swrpggm.com/wp-content/uploads/2021/02/Munificent_FE.png"
 
         case 74:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_soullessone_01_169_08305d9b.jpeg?region=0%2C0%2C1560%2C878"
 
         case 75:
-            return ""
+            return "https://lumiere-a.akamaihd.net/v1/images/v-wing-main_37a7dec1.jpeg?region=237%2C0%2C1445%2C813"
 
         default:
             return "https://lumiere-a.akamaihd.net/v1/images/swcj-hero-container-mobile_c3fdce51.jpeg?region=0%2C0%2C1600%2C900";

@@ -2,6 +2,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from "react"
 import { getFilmsImages } from "../services/StarWarsImages.jsx";
+import { tradEpisode } from "../services/StarWarsServices.jsx";
 import { Link } from "react-router-dom";
 
 export const FilmsCard = ({ uid, index }) => {
@@ -31,12 +32,12 @@ export const FilmsCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" src={getFilmsImages(uid)} />
+                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getFilmsImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{film.title}</Card.Title>
-                    <Card.Text className='my-0'>Episodio {film.episode_id}</Card.Text>
-                    <Card.Text className='my-0'>Director: {film.director}</Card.Text>
-                    <Card.Text>Estreno: {film.release_date}</Card.Text>
+                    <Card.Text className='my-0'>Episodio {tradEpisode(film.episode_id)}</Card.Text>
+                    <Card.Text className='my-0'>Director: <i>{film.director}</i></Card.Text>
+                    <Card.Text>Estreno: <i>{film.release_date}</i></Card.Text>
                     <div className="d-flex">
                         <Link to={"/films/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
                         {button}

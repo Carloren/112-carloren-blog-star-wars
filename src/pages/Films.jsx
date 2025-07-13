@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { FilmsCard } from "../components/FilmsCard";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getFilmsImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { getName, tradEpisode } from "../services/StarWarsServices";
@@ -32,8 +31,8 @@ export const Films = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" src={getFilmsImages(film.uid)} />
-                    <div className="detail-title ps-4 position-absolute bottom-0">
+                    <img className="rounded-top w-100 detail-image" style={{height: "34em", objectFit: "cover"}} src={getFilmsImages(film.uid)} />
+                    <div className="detail-title position-absolute bottom-0">
                         <h1>{film.title}</h1>
                         <h5 className="">Episodio {tradEpisode(film.episode_id)}</h5>
                     </div>
@@ -43,7 +42,10 @@ export const Films = () => {
                     <p className="fs-5 ps-4 my-0">Director: <i>{film.director}</i></p>
                     <p className="fs-5 ps-4 my-0">Productores: <i>{film.producer}</i></p>
                     <p className="fs-5 ps-4 my-0 text-justify">Personajes: {film.characters.map((url, index) => index != (film.characters.length - 1) ? <i key={index}>{getName(url, store.swPeople)}, </i> : <i key={index}>{getName(url, store.swPeople)}.</i>)}</p>
-                    {/* <p className="fs-5 ps-4 my-0 text-justify">Planetas: {film.characters.map((url, index) => index != (film.characters.length - 1) ? <i>{getName(url, store.swPlanets)}, </i> : <i>{getName(url, store.swPlanets)}.</i>)}</p> */}
+                    <p className="fs-5 ps-4 my-0 text-justify">Planetas: {film.planets.map((url, index) => index != (film.planets.length - 1) ? <i>{getName(url, store.swPlanets)}, </i> : <i>{getName(url, store.swPlanets)}.</i>)}</p>
+                    <p className="fs-5 ps-4 my-0 text-justify">Naves: {film.starships.map((url, index) => index != (film.starships.length - 1) ? <i>{getName(url, store.swShips)}, </i> : <i>{getName(url, store.swShips)}.</i>)}</p>
+                    <p className="fs-5 ps-4 my-0 text-justify">Vehículos: {film.vehicles.map((url, index) => index != (film.vehicles.length - 1) ? <i>{getName(url, store.swVehicles)}, </i> : <i>{getName(url, store.swVehicles)}.</i>)}</p>
+                    <p className="fs-5 ps-4 my-0 text-justify">Especies: {film.species.map((url, index) => index != (film.species.length - 1) ? <i>{getName(url, store.swSpecies)}, </i> : <i>{getName(url, store.swSpecies)}.</i>)}</p>
                 </div>
                 <div className="divider mx-5"></div>
                 {button}
@@ -53,7 +55,7 @@ export const Films = () => {
 
         return (
             <div className="container d-flex flex-column text-center mt-5">
-                <h2 className="text-info long-time-ago">Filmajes de la saga</h2>
+                <h2 className="text-info long-time-ago">Películas de la saga</h2>
                 <div className="row justify-content-center gx-3">
                     {store.swFilms.map((film, i) => (<FilmsCard key={i} uid={film.url.match(/(\d+)/)[0]} index={i} />))}
                 </div>

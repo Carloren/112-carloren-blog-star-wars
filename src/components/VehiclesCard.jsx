@@ -31,7 +31,7 @@ export const VehiclesCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" src={getVehiclesImages(uid)} />
+                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getVehiclesImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{vehicle.name}</Card.Title>
                     <Card.Text className='my-0'>Fabricante: {vehicle.manufacturer}</Card.Text>

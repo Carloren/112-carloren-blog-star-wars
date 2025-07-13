@@ -26,6 +26,14 @@ export const People = () => {
 
         const person = store.swPeople.find((item) => item.uid === useParams().id)
 
+        const personFilms = ((store.swFilms.filter((film) => film.characters.find((url) => url === person.url))));
+        const personShips = ((store.swShips.filter((film) => film.pilots.find((url) => url === person.url))));
+        const personVehicles = ((store.swVehicles.filter((film) => film.pilots.find((url) => url === person.url))));
+
+        console.log(personShips);
+
+
+
         const button = (store.favorites.find((item) => item.url === "/people/" + person.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
@@ -45,18 +53,45 @@ export const People = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" src={getPeopleImages(person.uid)} />
-                    <h1 className="detail-title ps-4 position-absolute bottom-0">{person.name}</h1>
+                    <img className="rounded-top w-100 detail-image" style={{height: "34em", objectFit: "cover"}} src={getPeopleImages(person.uid)} />
+                    <h1 className="detail-title position-absolute bottom-0">{person.name}</h1>
                 </div>
-                <div className="container row row-cols2">
-                    <p className="col-6 fs-2 ps-4">Nacimiento: {person.birth_year}</p>
-                    <p className="col-6 fs-2 ps-4">Planeta natal: {getName(person.homeworld, store.swPlanets)}</p>
-                    <p className="col-6 fs-2 ps-4">Género: {person.gender}</p>
-                    <p className="col-6 fs-2 ps-4">Piel: {person.skin_color}</p>
-                    <p className="col-6 fs-2 ps-4">Altura: {person.height}cm</p>
-                    <p className="col-6 fs-2 ps-4">Peso: {person.mass}kg</p>
-                    <p className="col-6 fs-2 ps-4">Pelo: {person.hair_color}</p>
-                    <p className="col-6 fs-2 ps-4">Ojos: {person.eye_color}</p>
+                <div className="container ms-0 row row-cols2">
+                    <p className="col-4 fs-5 ps-4">Nacimiento: <i>{person.birth_year === "unknown" ? "desconocido" : person.birth_year}</i></p>
+                    <p className="col-4 fs-5 ps-4">Planeta natal: <i>{person.homeworld === "unknown" ? "desconocido" : getName(person.homeworld, store.swPlanets)}</i></p>
+                    <p className="col-4 fs-5 ps-4">Género: <i>{person.gender === "unknown" ? "desconocido" : person.gender}</i></p>
+                    <p className="col-4 fs-5 ps-4">Piel: <i>{person.skin_color === "unknown" ? "desconocido" : person.skin_color}</i></p>
+                    <p className="col-4 fs-5 ps-4">Altura: <i>{person.height === "unknown" ? "desconocido" : person.height + "cm"}</i></p>
+                    <p className="col-4 fs-5 ps-4">Peso: <i>{person.mass === "unknown" ? "desconocido" : person.mass + "kg"}</i></p>
+                    <p className="col-4 fs-5 ps-4">Pelo: <i>{person.hair_color === "unknown" ? "desconocido" : person.hair_color}</i></p>
+                    <p className="col-4 fs-5 ps-4">Ojos: <i>{person.eye_color === "unknown" ? "desconocido" : person.eye_color}</i></p>
+                    <p className="col-12 fs-5 ps-4">Películas: <i>{personFilms.length != 0 ?
+                        personFilms.map((item, index) => index != (personFilms.length - 1) ?
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.title}</Link>, </span>
+                            :
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.title}</Link>.</span>)
+                        :
+                        "No aparece en ninguna"}
+                    </i>
+                    </p>
+                    <p className="col-12 fs-5 ps-4">Naves: <i>{personShips.length != 0 ?
+                        personShips.map((item, index) => index != (personShips.length - 1) ?
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
+                            :
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>.</span>)
+                        :
+                        "No tiene"}
+                    </i>
+                    </p>
+                    <p className="col-12 fs-5 ps-4">Vehículos: <i>{personVehicles.length != 0 ?
+                        personVehicles.map((item, index) => index != (personVehicles.length - 1) ?
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
+                            :
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>.</span>)
+                        :
+                        "No tiene"}
+                    </i>
+                    </p>
                 </div>
                 <div className="divider mx-5"></div>
                 {button}
