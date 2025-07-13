@@ -17,8 +17,6 @@ export const Films = () => {
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(film.name, film.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
 
-
-
         function addFavorite(name, id) {
             if (store.favorites.find((item) => item.url === "/films/" + id) != null) {
                 dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/films/" + id) })

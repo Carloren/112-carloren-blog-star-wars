@@ -30,16 +30,10 @@ export const People = () => {
         const personShips = ((store.swShips.filter((film) => film.pilots.find((url) => url === person.url))));
         const personVehicles = ((store.swVehicles.filter((film) => film.pilots.find((url) => url === person.url))));
 
-        console.log(personShips);
-
-
-
         const button = (store.favorites.find((item) => item.url === "/people/" + person.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
-
-
 
         function addFavorite(name, id) {
             if (store.favorites.find((item) => item.url === "/people/" + id) != null) {

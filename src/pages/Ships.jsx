@@ -14,7 +14,7 @@ export const Ships = () => {
         if (useParams().id === "all") {
             return (
                 <div className="container d-flex flex-column text-center mt-5">
-                    <h2 className="text-info long-time-ago">Personajes de la saga</h2>
+                    <h2 className="text-info long-time-ago">Naves y Estaciones espaciales</h2>
                     <div className="row justify-content-center gx-3">
                         {store.swShips.map((ship, i) => (<ShipsCard key={i} uid={ship.url.match(/(\d+)/)[0]} index={i} />))}
                     </div>
@@ -26,20 +26,10 @@ export const Ships = () => {
 
         const ship = store.swShips.find((item) => item.uid === useParams().id)
 
-        const shipFilms = ((store.swFilms.filter((film) => film.characters.find((url) => url === ship.url))));
-        const shipShips = ((store.swShips.filter((film) => film.pilots.find((url) => url === ship.url))));
-        const shipVehicles = ((store.swVehicles.filter((film) => film.pilots.find((url) => url === ship.url))));
-
-        console.log(shipShips);
-
-
-
         const button = (store.favorites.find((item) => item.url === "/ships/" + ship.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(ship.name, ship.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(ship.name, ship.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
-
-
 
         function addFavorite(name, id) {
             if (store.favorites.find((item) => item.url === "/ships/" + id) != null) {
@@ -53,46 +43,40 @@ export const Ships = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{height: "34em", objectFit: "cover"}} src={getShipsImages(ship.uid)} />
-                    <h1 className="detail-title position-absolute bottom-0">{ship.name}</h1>
+                    <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getShipsImages(ship.uid)} />
+                    <div className="detail-title position-absolute bottom-0">
+                        <h1>{ship.name}</h1>
+                        <h5 className="">Modelo {ship.model}, clase {ship.starship_class}</h5>
+                    </div>
                 </div>
-                {/* <div className="container ms-0 row row-cols2">
-                    <p className="col-4 fs-5 ps-4">Nacimiento: <i>{ship.birth_year === "unknown" ? "desconocido" : ship.birth_year}</i></p>
-                    <p className="col-4 fs-5 ps-4">Planeta natal: <i>{ship.homeworld === "unknown" ? "desconocido" : getName(ship.homeworld, store.swPlanets)}</i></p>
-                    <p className="col-4 fs-5 ps-4">Género: <i>{ship.gender === "unknown" ? "desconocido" : ship.gender}</i></p>
-                    <p className="col-4 fs-5 ps-4">Piel: <i>{ship.skin_color === "unknown" ? "desconocido" : ship.skin_color}</i></p>
-                    <p className="col-4 fs-5 ps-4">Altura: <i>{ship.height === "unknown" ? "desconocido" : ship.height + "cm"}</i></p>
-                    <p className="col-4 fs-5 ps-4">Peso: <i>{ship.mass === "unknown" ? "desconocido" : ship.mass + "kg"}</i></p>
-                    <p className="col-4 fs-5 ps-4">Pelo: <i>{ship.hair_color === "unknown" ? "desconocido" : ship.hair_color}</i></p>
-                    <p className="col-4 fs-5 ps-4">Ojos: <i>{ship.eye_color === "unknown" ? "desconocido" : ship.eye_color}</i></p>
-                    <p className="col-12 fs-5 ps-4">Películas: <i>{shipFilms.length != 0 ?
-                        shipFilms.map((item, index) => index != (shipFilms.length - 1) ?
-                            <span key={index}><Link className="detail-link" to={item.page} >{item.title}</Link>, </span>
-                            :
-                            <span key={index}><Link className="detail-link" to={item.page} >{item.title}</Link>.</span>)
+                <div className="container ms-0 row row-cols2">
+                    <p className="col-12 fs-5 ps-4 my-0">Fabricante: <i>{ship.manufacturer === "unknown" ? "desconocido" : ship.manufacturer}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Coste: <i>{ship.cost_in_credits === "unknown" ? "desconocido" : ship.cost_in_credits + " créditos"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Longitud: <i>{ship.length === "unknown" ? "desconocida" : ship.length + "m"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Velocidad atmosférica máxima: <i>{ship.max_atmosphering_speed === "unknown" ? "desconocida" : ship.max_atmosphering_speed + "km/h"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Velocidad máxima en vacío: <i>{ship.MGLT === "unknown" ? "desconocido" : ship.MGLT + " MGLT"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Tripulación: <i>{ship.crew === "unknown" ? "desconocida" : ship.crew + " personas"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Pasajeros: <i>{ship.passengers === "unknown" ? "desconocidos" : ship.passengers + " personas"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Provisiones: <i>{ship.consumables === "unknown" ? "desconocido" : "para " + ship.consumables}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Carga máxima: <i>{ship.cargo_capacity === "unknown" ? "desconocida" : ship.cargo_capacity + "kg"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Velocidad luz clase <i>{ship.hyperdrive_rating === "unknown" ? "desconocido" : ship.hyperdrive_rating}</i></p>
+                    <p className="fs-5 ps-4 my-0 text-justify">Pilotos: {ship.pilots.length === 0 ?
+                        <i>desconocido</i>
                         :
-                        "No aparece en ninguna"}
-                    </i>
-                    </p>
-                    <p className="col-12 fs-5 ps-4">Naves: <i>{shipShips.length != 0 ?
-                        shipShips.map((item, index) => index != (shipShips.length - 1) ?
-                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
+                        ship.pilots.map((url, index) => index != (ship.pilots.length - 1) ?
+                            <i key={index}>{getName(url, store.swPeople)}, </i>
                             :
-                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>.</span>)
-                        :
-                        "No tiene"}
-                    </i>
+                            <i key={index}>{getName(url, store.swPeople)}.</i>)}
                     </p>
-                    <p className="col-12 fs-5 ps-4">Vehículos: <i>{shipVehicles.length != 0 ?
-                        shipVehicles.map((item, index) => index != (shipVehicles.length - 1) ?
-                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
+                    <p className="fs-5 ps-4 my-0 text-justify">Peículas: {ship.films.length === 0 ?
+                        <i>No aparece en ninguna</i>
+                        :
+                        ship.films.map((url, index) => index != (ship.films.length - 1) ?
+                            <i key={index}>{getName(url, store.swFilms)}, </i>
                             :
-                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>.</span>)
-                        :
-                        "No tiene"}
-                    </i>
+                            <i key={index}>{getName(url, store.swFilms)}.</i>)}
                     </p>
-                </div> */}
+                </div>
                 <div className="divider mx-5"></div>
                 {button}
             </div>
@@ -139,7 +123,7 @@ export const Ships = () => {
 
         return (
             <div className="container d-flex flex-column text-center mt-5">
-                <h2 className="text-info long-time-ago">Personajes de la saga</h2>
+                <h2 className="text-info long-time-ago">Naves y Estaciones espaciales</h2>
                 <div className="tab-content" id="pills-tabContent">
                     {pages}
                 </div>
