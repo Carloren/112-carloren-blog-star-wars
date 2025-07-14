@@ -31,7 +31,7 @@ export const SpeciesCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getSpeciesImages(uid)} />
+                <Card.Img variant="top" src={getSpeciesImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{specie.name}</Card.Title>
                     <Card.Text className='my-0'>Grupo: {specie.classification}</Card.Text>

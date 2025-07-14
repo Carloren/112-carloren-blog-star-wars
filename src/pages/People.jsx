@@ -47,7 +47,7 @@ export const People = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{height: "34em", objectFit: "cover"}} src={getPeopleImages(person.uid)} />
+                    <img className="rounded-top w-100 detail-image" src={getPeopleImages(person.uid)} />
                     <h1 className="detail-title position-absolute bottom-0">{person.name}</h1>
                 </div>
                 <div className="container ms-0 row row-cols2">

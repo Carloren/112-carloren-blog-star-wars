@@ -126,6 +126,11 @@ li:hover>.hide {
     border-color: #0dcaf0;
 }
 
+.card-img-top {
+    aspect-ratio: 16/9;
+    object-fit: cover
+}
+
 .hide-scroll {
     overflow-x: hidden;
     margin-bottom: 5px;
@@ -173,6 +178,8 @@ li:hover>.hide {
 
 .detail-image {
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    aspect-ratio: 18/9;
+    object-fit: cover
 }
 
 .detail-box {

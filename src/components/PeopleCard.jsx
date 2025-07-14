@@ -30,7 +30,7 @@ export const PeopleCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getPeopleImages(uid)} />
+                <Card.Img variant="top" src={getPeopleImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{person.name}</Card.Title>
                     <Card.Text className='my-0'>Nacimiento: <i>{person.birth_year === "unknown" ? "desconocido" : person.birth_year}</i></Card.Text>

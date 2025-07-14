@@ -32,7 +32,7 @@ export const FilmsCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" style={{height: "10.5em", objectFit: "cover"}} src={getFilmsImages(uid)} />
+                <Card.Img variant="top" src={getFilmsImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{film.title}</Card.Title>
                     <Card.Text className='my-0'>Episodio {tradEpisode(film.episode_id)}</Card.Text>
