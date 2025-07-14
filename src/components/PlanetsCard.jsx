@@ -1,6 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { getPlanetsImages } from "../services/StarWarsImages.jsx";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export const PlanetsCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [planet, setPlanet] = useState(store.swPlanets[index])
+    const planet = store.swPlanets[index]
 
     const button = (store.favorites.find((item) => item.url === "/planets/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(planet.name, uid)}><i className="fa-solid fa-heart"></i></button>)
@@ -34,9 +34,9 @@ export const PlanetsCard = ({ uid, index }) => {
                 <Card.Img variant="top" src={getPlanetsImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{planet.name}</Card.Title>
-                    <Card.Text className='my-0'>Nacimiento: {planet.birth_year}</Card.Text>
-                    <Card.Text className='my-0'>Altura: {planet.height}cm</Card.Text>
-                    <Card.Text>Peso: {planet.mass}kg</Card.Text>
+                    <Card.Text className='my-0'>Día: <i>{planet.rotation_period === "unknown" ? "desconocido" : planet.rotation_period + " horas"}</i></Card.Text>
+                    <Card.Text className='my-0'>Clima: <i>{planet.climate === "unknown" ? "desconocido" : planet.climate}</i></Card.Text>
+                    <Card.Text>Población: <i>{planet.population === "unknown" ? "desconocido" : planet.population}</i></Card.Text>
                     <div className="d-flex">
                         <Link to={"/planets/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
                         {button}

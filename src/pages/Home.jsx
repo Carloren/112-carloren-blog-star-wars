@@ -51,15 +51,6 @@ export const Home = () => {
 			getPlanets().then((data) => dispatch({ type: "get_planets", payload: data }))
 
 		}
-		// let print = ""
-		// for (let index = 0; index < JSON.parse(localStorage.getItem("species")).length; index++) {
-		// 	print += `
-				
-        // case ${JSON.parse(localStorage.getItem("species"))[index].uid}:
-        //     return ""`
-		// console.log(print);
-		
-		// }
 
 	}, [])
 

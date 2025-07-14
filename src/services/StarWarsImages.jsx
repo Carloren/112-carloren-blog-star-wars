@@ -666,6 +666,153 @@ export function getPlanetsImages(uid) {
         case 10:
             return "https://lumiere-a.akamaihd.net/v1/images/kamino-main_3001369e.jpeg?region=158%2C0%2C964%2C542"
 
+        case 11:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_geonosis_01_169_1d04e086.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 12:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_utapau_01_169_14a54eb1.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 13:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_mustafar_01_169_5b470758.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 14:
+            return "https://lumiere-a.akamaihd.net/v1/images/kashyyyk-main_37a2e497.jpeg?region=237%2C0%2C1445%2C813"
+
+        case 15:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_polismassa_01_169_21f04b76.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 16:
+            return "https://lumiere-a.akamaihd.net/v1/images/mygeeto-main-image_91c503cc.jpeg?region=49%2C0%2C1181%2C665"
+
+        case 17:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_felucia_01_169_2070e38e.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 18:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_catoneimoidia_01_169_d2b9bb58.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 19:
+            return "https://lumiere-a.akamaihd.net/v1/images/saleucami-main_41b56ea0.jpeg?region=161%2C0%2C958%2C539"
+
+        case 20:
+            return "https://img05.deviantart.net/edb9/i/2013/189/3/a/shelter_at_worlds_end_by_flaviobolla-d6cjjq3.jpg"
+
+        case 21:
+            return "https://lumiere-a.akamaihd.net/v1/images/the-bad-batch-story-gallery-the-summit-04_e0c438cb.jpeg?region=237%2C0%2C1445%2C813"
+
+        case 22:
+            return "https://lumiere-a.akamaihd.net/v1/images/corellia-main_621fbca8.jpeg?region=158%2C0%2C964%2C542"
+
+        case 23:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_rodia_01_169_6f76b79d.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 24:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_nalhutta_01_169_72d58d25.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 25:
+            return "https://lumiere-a.akamaihd.net/v1/images/dantooine_f1c04676.jpeg?region=0%2C20%2C1560%2C878"
+
+        case 26:
+            return "https://static.wikia.nocookie.net/esstarwars/images/b/bd/Bestine.png/revision/latest?cb=20151031042433"
+
+        case 27:
+            return "https://lumiere-a.akamaihd.net/v1/images/ordo-mantell-main_0320929c.jpeg?region=158%2C0%2C964%2C542"
+
+        case 29:
+            return "https://pm1.aminoapps.com/6449/9e7e1a0b61e94e4a6563697ab19c6ba7a895915c_hq.jpg"
+
+        case 30:
+            return "https://pm1.aminoapps.com/7076/cd44bad3664c0f27b92535683669a1579f809317r1-1000-750v2_hq.jpg"
+
+        case 31:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_moncala_01_169_b5bc76f1.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 32:
+            return "https://lumiere-a.akamaihd.net/v1/images/chandrilla-main_be2b5f47.jpeg?region=165%2C0%2C950%2C534"
+
+        case 33:
+            return "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2015/05/474946-star-wars-battlefront-imagenes-planeta-sullust.jpg?tf=3840x"
+
+        case 34:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_toydaria_01_169_70b20e0e.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 35:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_malastare_01_169_59df245f.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 36:
+            return "https://pm1.aminoapps.com/6175/4e76f0defe122a7c65620eb9e7fa3f0ea59a1829_00.jpg"
+
+        case 37:
+            return "https://lumiere-a.akamaihd.net/v1/images/ryloth-main_72a1cd8c.jpeg?region=157%2C0%2C965%2C543"
+
+        case 38:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_aleen_01_169_40bcb2df.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 39:
+            return "https://media.moddb.com/cache/images/mods/1/22/21018/thumb_620x2000/Sins_of_a_Solar_Empire_Rebellio_2014-05-11_16-46-48-16.png"
+
+        case 40:
+            return "https://static.wikia.nocookie.net/esstarwars/images/7/7d/ZygerriaTVE.png/revision/latest/smart/width/386/height/259?cb=20181121010331"
+
+        case 41:
+            return "https://static.wikia.nocookie.net/esstarwars/images/3/31/Tund_TEA.jpg/revision/latest?cb=20221022170839"
+
+        case 42:
+            return "https://static.wikia.nocookie.net/starwarsofthecaribbean/images/6/6f/Jungle_Planet_Resource.jpg/revision/latest?cb=20120309222948"
+
+        case 43:
+            return "https://static.wikia.nocookie.net/esstarwars/images/c/cc/Cerea-FDCR.png/revision/latest?cb=20170616213312"
+
+        case 44:
+            return "https://cdnb.artstation.com/p/assets/images/images/022/894/425/large/slawomir-rudzki-highresscreenshot00004.jpg?1577131657"
+
+        case 45:
+            return "https://www.uruloki.org/felipeblog/images2010/20100619-prince-of-persia-ca-2-max.jpg"
+
+        case 46:
+            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOcoYBoll9mhQ23cIfRPAwBHFhDtnreNayLQ&s"
+
+        case 47:
+            return "https://i.imgur.com/W21tjcY.jpg"
+
+        case 48:
+            return "https://static.wikia.nocookie.net/esstarwars/images/7/7f/Dxun.JPG/revision/latest/smart/width/386/height/259?cb=20070124002139"
+
+        case 49:
+            return "https://static.wikia.nocookie.net/swfanon/images/e/e7/DorinMoonSea.png/revision/latest?cb=20220814214648"
+
+        case 50:
+            return "https://static.wikia.nocookie.net/starwars/images/1/1f/Thyferra.jpg/revision/latest/smart/width/386/height/259?cb=20240827070808&path-prefix=nl"
+
+        case 51:
+            return "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bacac58b-3be9-42b4-ae42-7a656c195a28/dcconau-dfb1f9dd-35db-476f-b5bb-81c6b0560ea4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JhY2FjNThiLTNiZTktNDJiNC1hZTQyLTdhNjU2YzE5NWEyOFwvZGNjb25hdS1kZmIxZjlkZC0zNWRiLTQ3NmYtYjViYi04MWM2YjA1NjBlYTQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GE672UV88JBEKc3tIbdq8Nr59_UTi5zTk7tc8fnKEcU"
+
+        case 52:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_serenno_01_169_0541fc55.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 53:
+            return "https://static.wikia.nocookie.net/esstarwars/images/8/84/Concord_Dawn_system.png/revision/latest?cb=20201206201814"
+
+        case 54:
+            return "https://static.wikia.nocookie.net/esstarwars/images/6/66/Zolan.jpg/revision/latest?cb=20130215223751"
+
+        case 55:
+            return "https://static.wikia.nocookie.net/esstarwars/images/9/9f/Ojom.jpg/revision/latest?cb=20120423190534"
+
+        case 56:
+            return "https://rpggamer.org/uploaded_images/Skako_Minor.jpg"
+
+        case 57:
+            return "https://preview.redd.it/ysy0qims31z71.jpg?width=1080&crop=smart&auto=webp&s=25b65dc7dec000d2f0027d732ce57d35b813f54a"
+
+        case 58:
+            return "https://static.wikia.nocookie.net/starwars/images/b/b4/ShiliVillage-LaD.png/revision/latest?cb=20221027035437"
+
+        case 59:
+            return "https://static.wikia.nocookie.net/starwars/images/b/b6/NotTenochtitlan-TEoR.jpg/revision/latest?cb=20200703215746"
+
+        case 60:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_umbara_01_169_beef68c7.jpeg?region=0%2C0%2C1560%2C878"
+
         default:
             return "https://lumiere-a.akamaihd.net/v1/images/swcj-hero-container-mobile_c3fdce51.jpeg?region=0%2C0%2C1600%2C900";
     }
