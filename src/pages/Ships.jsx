@@ -46,7 +46,7 @@ export const Ships = () => {
                     <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getShipsImages(ship.uid)} />
                     <div className="detail-title position-absolute bottom-0">
                         <h1>{ship.name}</h1>
-                        <h5 className="">Modelo {ship.model}, clase {ship.starship_class}</h5>
+                        <h5 className="text-warning">Modelo {ship.model}, clase {ship.starship_class}</h5>
                     </div>
                 </div>
                 <div className="container ms-0 row row-cols2">
@@ -55,8 +55,8 @@ export const Ships = () => {
                     <p className="col-6 fs-5 ps-4 my-0">Longitud: <i>{ship.length === "unknown" ? "desconocida" : ship.length + "m"}</i></p>
                     <p className="col-6 fs-5 ps-4 my-0">Velocidad atmosférica máxima: <i>{ship.max_atmosphering_speed === "unknown" ? "desconocida" : ship.max_atmosphering_speed + "km/h"}</i></p>
                     <p className="col-6 fs-5 ps-4 my-0">Velocidad máxima en vacío: <i>{ship.MGLT === "unknown" ? "desconocido" : ship.MGLT + " MGLT"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Tripulación: <i>{ship.crew === "unknown" ? "desconocida" : ship.crew + " personas"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Pasajeros: <i>{ship.passengers === "unknown" ? "desconocidos" : ship.passengers + " personas"}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Tripulación: <i>{ship.crew === "unknown" ? "desconocida" : ship.crew}</i></p>
+                    <p className="col-6 fs-5 ps-4 my-0">Pasajeros: <i>{ship.passengers === "unknown" ? "desconocidos" : ship.passengers}</i></p>
                     <p className="col-6 fs-5 ps-4 my-0">Provisiones: <i>{ship.consumables === "unknown" ? "desconocido" : "para " + ship.consumables}</i></p>
                     <p className="col-6 fs-5 ps-4 my-0">Carga máxima: <i>{ship.cargo_capacity === "unknown" ? "desconocida" : ship.cargo_capacity + "kg"}</i></p>
                     <p className="col-6 fs-5 ps-4 my-0">Velocidad luz clase <i>{ship.hyperdrive_rating === "unknown" ? "desconocido" : ship.hyperdrive_rating}</i></p>

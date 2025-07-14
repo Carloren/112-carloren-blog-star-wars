@@ -27,8 +27,9 @@ export const People = () => {
         const person = store.swPeople.find((item) => item.uid === useParams().id)
 
         const personFilms = ((store.swFilms.filter((film) => film.characters.find((url) => url === person.url))));
-        const personShips = ((store.swShips.filter((film) => film.pilots.find((url) => url === person.url))));
-        const personVehicles = ((store.swVehicles.filter((film) => film.pilots.find((url) => url === person.url))));
+        const personShips = ((store.swShips.filter((ship) => ship.pilots.find((url) => url === person.url))));
+        const personVehicles = ((store.swVehicles.filter((vehicle) => vehicle.pilots.find((url) => url === person.url))));
+        const personSpecies = ((store.swSpecies.filter((specie) => specie.people.find((url) => url === person.url))));
 
         const button = (store.favorites.find((item) => item.url === "/people/" + person.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
@@ -84,6 +85,15 @@ export const People = () => {
                             <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>.</span>)
                         :
                         "No tiene"}
+                    </i>
+                    </p>
+                    <p className="col-12 fs-5 ps-4">Especie: <i>{personSpecies.length != 0 ?
+                        personSpecies.map((item, index) => index != (personSpecies.length - 1) ?
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
+                            :
+                            <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>.</span>)
+                        :
+                        <span><Link className="detail-link" to="/species/1" >Human</Link>.</span>} {/*En la especie humana no están todos y todos los que no están son humanos */}
                     </i>
                     </p>
                 </div>

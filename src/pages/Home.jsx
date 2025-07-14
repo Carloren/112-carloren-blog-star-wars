@@ -10,8 +10,6 @@ import { VehiclesCard } from "../components/VehiclesCard.jsx";
 import { SpeciesCard } from "../components/SpeciesCard.jsx";
 import { PlanetsCard } from "../components/PlanetsCard.jsx";
 
-//console.log(("https://swapi.info/api/people/13456").match(/(\d+)/)[0]); //esto sirve para quedarse solo con los numeros de un string
-
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
@@ -54,10 +52,10 @@ export const Home = () => {
 
 		}
 		// let print = ""
-		// for (let index = 0; index < JSON.parse(localStorage.getItem("ships")).length; index++) {
+		// for (let index = 0; index < JSON.parse(localStorage.getItem("species")).length; index++) {
 		// 	print += `
 				
-        // case ${JSON.parse(localStorage.getItem("ships"))[index].uid}:
+        // case ${JSON.parse(localStorage.getItem("species"))[index].uid}:
         //     return ""`
 		// console.log(print);
 		

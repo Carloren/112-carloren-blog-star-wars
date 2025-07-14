@@ -113,3 +113,4 @@ export const getName = (url, group) => group[0].name != null ?
     <Link to={group.find((item) => item.url === url).page} className="detail-link">{group.find((item) => item.url === url).name}</Link>
     :
     <Link to={group.find((item) => item.url === url).page} className="detail-link">{group.find((item) => item.url === url).title}</Link>
+ 

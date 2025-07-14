@@ -34,9 +34,9 @@ export const SpeciesCard = ({ uid, index }) => {
                 <Card.Img variant="top" src={getSpeciesImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{specie.name}</Card.Title>
-                    <Card.Text className='my-0'>Grupo: {specie.classification}</Card.Text>
-                    <Card.Text className='my-0'>Altura media: {specie.average_height}cm</Card.Text>
-                    <Card.Text>Vida media: {specie.average_lifespan} años</Card.Text>
+                    <Card.Text className='my-0'>Grupo: <i>{specie.classification === "unknown" ? "desconocido" : specie.classification}</i></Card.Text>
+                    <Card.Text className='my-0'>Altura media: <i>{specie.average_height === "n/a" ? "indefinida" : specie.average_height + " cm"}</i></Card.Text>
+                    <Card.Text>Vida media: <i>{specie.average_lifespan === "unknown" ? "desconocida" : specie.average_lifespan === "indefinite" ? "indefinida" : specie.average_lifespan + " años"}</i></Card.Text>
                     <div className="d-flex">
                         <Link to={"/species/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
                         {button}

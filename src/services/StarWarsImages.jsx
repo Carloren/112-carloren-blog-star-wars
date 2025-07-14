@@ -394,35 +394,122 @@ export function getShipsImages(uid) {
 
 export function getVehiclesImages(uid) {
     switch (parseInt(uid)) {
-        // case 1:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/tatooine-main_9542b896.jpeg?region=165%2C0%2C949%2C534";
+        case 4:
+            return "https://lumiere-a.akamaihd.net/v1/images/sandcrawler-main_eb1b036b.jpeg?region=251%2C20%2C865%2C487"
 
-        // case 2:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/alderaan-main_f5b676cf.jpeg?region=0%2C0%2C1280%2C720"
+        case 6:
+            return "https://pm1.aminoapps.com/6379/a3e5856245a1b6d59e10dde10614e4c2ab4d1992_00.jpg"
 
-        // case 3:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/yavin-4-main_bd23f447.jpeg?region=331%2C0%2C949%2C534"
+        case 7:
+            return "https://lumiere-a.akamaihd.net/v1/images/E4D_IA_1136_6b8704fa.jpeg?region=237%2C0%2C1456%2C819"
 
-        // case 4:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/Hoth_d074d307.jpeg?region=0%2C0%2C1200%2C675"
+        case 8:
+            return "https://lumiere-a.akamaihd.net/v1/images/TIE-Fighter_25397c64.jpeg?region=0%2C1%2C2048%2C1152"
 
-        // case 5:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/Dagobah_890df592.jpeg?region=0%2C80%2C1260%2C711"
+        case 14:
+            return "https://lumiere-a.akamaihd.net/v1/images/snowspeeder_ef2f9334.jpeg?region=0%2C211%2C2048%2C1154"
 
-        // case 6:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/Bespin_2d0759aa.jpeg?region=0%2C0%2C1560%2C878"
+        case 16:
+            return "https://static.wikia.nocookie.net/esstarwars/images/1/17/TIE_Bomber_BF2.png/revision/latest?cb=20171101030957"
 
-        // case 7:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/databank_endor_01_169_68ba9bdc.jpeg?region=0%2C0%2C1560%2C878"
+        case 18:
+            return "https://lumiere-a.akamaihd.net/v1/images/AT-AT_89d0105f.jpeg?region=214%2C19%2C1270%2C716"
 
-        // case 8:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/databank_naboo_01_169_6cd7e1e0.jpeg?region=0%2C0%2C1560%2C878"
+        case 19:
+            return "https://lumiere-a.akamaihd.net/v1/images/e6d_ia_5724_a150e6d4.jpeg?region=124%2C0%2C1424%2C802"
 
-        // case 9:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/coruscant-main_d2fad5f2.jpeg?region=245%2C0%2C1430%2C804"
+        case 20:
+            return "https://static.wikia.nocookie.net/starwars/images/3/3b/Cloud-car-v2.png/revision/latest?cb=20160617064429"
 
-        // case 10:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/kamino-main_3001369e.jpeg?region=158%2C0%2C964%2C542"
+        case 24:
+            return "https://www.brickfanatics.com/wp-content/uploads/2023/03/Star-Wars-Return-of-the-Jedi-Jabbas-Sail-Barge.jpg"
+
+        case 25:
+            return "https://lumiere-a.akamaihd.net/v1/images/skiff_9d81647a.jpeg?region=0%2C88%2C1560%2C878"
+
+        case 26:
+            return "https://static.wikia.nocookie.net/esstarwars/images/f/f5/TIE_Interceptor_BF.png/revision/latest?cb=20171101021333"
+
+        case 30:
+            return "https://static.wikia.nocookie.net/starwars/images/4/47/Speeder_Bike_DICE.png/revision/latest/scale-to-width-down/1200?cb=20230723010519"
+
+        case 33:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_vulturedroid_01_169_6ef9fd50.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 34:
+            return "https://static.wikia.nocookie.net/esstarwars/images/a/ab/MTT_BF2.png/revision/latest?cb=20180617235758"
+
+        case 35:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_aatbattletank_01_169_9de46aea.jpeg?region=0%2C49%2C1560%2C780"
+
+        case 36:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_stap_01_169_75029522.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 37:
+            return "https://static.wikia.nocookie.net/esstarwars/images/d/d0/L-2832-TCWS01E01.jpg/revision/latest?cb=20180720002458"
+
+        case 38:
+            return "https://static.wikia.nocookie.net/esstarwars/images/2/2d/Bongo_1.jpg/revision/latest/scale-to-width-down/1200?cb=20100602224226"
+
+        case 42:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_sithspeeder_01_169_cfa01a05.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 44:
+            return "https://static.wikia.nocookie.net/starwars/images/2/21/Anakin_looking_dramatic.png/revision/latest?cb=20250322114637"
+
+        case 45:
+            return "https://static.wikia.nocookie.net/starwars/images/2/22/Koro2_uvg.jpg/revision/latest/scale-to-width-down/1200?cb=20130519005132"
+
+        case 46:
+            return "https://i.pinimg.com/736x/cb/30/c8/cb30c8353f6a1a98ba0514f3843dbc96.jpg"
+
+        case 50:
+            return "https://static.wikia.nocookie.net/esstarwars/images/c/c5/Low_Altitude_Assault_Transport.png/revision/latest?cb=20160731235724"
+
+        case 51:
+            return "https://static.wikia.nocookie.net/starwars/images/6/63/LAATc_USW.png/revision/latest/scale-to-width-down/1200?cb=20241201080310"
+
+        case 53:
+            return "https://lumiere-a.akamaihd.net/v1/images/at-te-main_09471f2b.jpeg?region=158%2C0%2C964%2C542"
+
+        case 54:
+            return "https://lumiere-a.akamaihd.net/v1/images/self-propelled-heavy-artillery-turbolaser_1d69d1e5.jpeg?region=0%2C0%2C1560%2C880"
+
+        case 55:
+            return "https://lumiere-a.akamaihd.net/v1/images/count-dookus-speeder_099a9e27.jpeg?region=472%2C0%2C2896%2C1629"
+
+        case 56:
+            return "https://lumiere-a.akamaihd.net/v1/images/neimoidian_escort_shuttle_7602d574.jpeg?region=0%2C6%2C1433%2C806"
+
+        case 57:
+            return "https://lumiere-a.akamaihd.net/v1/images/geonosian-fighter_119560e5.jpeg?region=0%2C13%2C1560%2C879"
+
+        case 60:
+            return "https://lumiere-a.akamaihd.net/v1/images/ep3_ia_96565_46396938.jpeg?region=233%2C0%2C1454%2C818"
+
+        case 62:
+            return "https://static.wikia.nocookie.net/starwars/images/4/4e/Firespeeders.jpg/revision/latest?cb=20080317095744&path-prefix=nl"
+
+        case 67:
+            return "https://static.wikia.nocookie.net/starwars/images/a/a0/DroidTrifighter-TCWs3BR2.png/revision/latest?cb=20230919010425"
+
+        case 69:
+            return "https://static.wikia.nocookie.net/starwars/images/0/03/Wookieeflyingcat2.png/revision/latest/scale-to-width-down/1200?cb=20130202035458"
+
+        case 70:
+            return "https://static.wikia.nocookie.net/swse/images/9/9a/Gnasp_Fluttercraft.jpg/revision/latest/scale-to-width-down/1200?cb=20190717214620"
+
+        case 71:
+            return "https://static.wikia.nocookie.net/starwars/images/9/9c/A9_tank_Chiang.jpg/revision/latest?cb=20181102005222"
+
+        case 72:
+            return "https://lumiere-a.akamaihd.net/v1/images/nr_n99_persuader_class_tank_droid_f910aac1.jpeg?region=596%2C184%2C964%2C481"
+
+        case 73:
+            return "https://static.wikia.nocookie.net/esstarwars/images/6/6d/DroidGunship-DB.png/revision/latest?cb=20200313184324"
+
+        case 76:
+            return "https://static.wikia.nocookie.net/esstarwars/images/5/5c/AT-RT_BF2.png/revision/latest?cb=20190501232359"
 
         default:
             return "https://lumiere-a.akamaihd.net/v1/images/swcj-hero-container-mobile_c3fdce51.jpeg?region=0%2C0%2C1600%2C900";
@@ -431,35 +518,116 @@ export function getVehiclesImages(uid) {
 
 export function getSpeciesImages(uid) {
     switch (parseInt(uid)) {
-        // case 1:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/tatooine-main_9542b896.jpeg?region=165%2C0%2C949%2C534";
+        case 1:
+            return "https://lumiere-a.akamaihd.net/v1/images/owen-lars-main_08c717c8.jpeg?region=0%2C34%2C1053%2C593"
 
-        // case 2:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/alderaan-main_f5b676cf.jpeg?region=0%2C0%2C1280%2C720"
+        case 2:
+            return "https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=176%2C0%2C951%2C536"
 
-        // case 3:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/yavin-4-main_bd23f447.jpeg?region=331%2C0%2C949%2C534"
+        case 3:
+            return "https://lumiere-a.akamaihd.net/v1/images/5afd813ca7987d0001d6498c-image_31c8d602.jpeg?region=0%2C0%2C1536%2C864"
 
-        // case 4:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/Hoth_d074d307.jpeg?region=0%2C0%2C1200%2C675"
+        case 4:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_greedo_01_169_3e4b96ef.jpeg?region=0%2C0%2C1560%2C878"
 
-        // case 5:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/Dagobah_890df592.jpeg?region=0%2C80%2C1260%2C711"
+        case 5:
+            return "https://lumiere-a.akamaihd.net/v1/images/Jabba-The-Hutt_b5a08a70.jpeg?region=0%2C0%2C1200%2C675"
 
-        // case 6:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/Bespin_2d0759aa.jpeg?region=0%2C0%2C1560%2C878"
+        case 6:
+            return "https://lumiere-a.akamaihd.net/v1/images/Yoda-Retina_2a7ecc26.jpeg?region=0%2C0%2C1536%2C864"
 
-        // case 7:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/databank_endor_01_169_68ba9bdc.jpeg?region=0%2C0%2C1560%2C878"
+        case 7:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_bossk_01_169_c3c42fbe.jpeg?region=0%2C0%2C1560%2C878"
 
-        // case 8:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/databank_naboo_01_169_6cd7e1e0.jpeg?region=0%2C0%2C1560%2C878"
+        case 8:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_ackbar_01_169_55137220.jpeg?region=0%2C0%2C1560%2C878"
 
-        // case 9:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/coruscant-main_d2fad5f2.jpeg?region=245%2C0%2C1430%2C804"
+        case 9:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_wickettwwarrick_01_169_86d1210c.jpeg?region=0%2C0%2C1560%2C878"
 
-        // case 10:
-        //     return "https://lumiere-a.akamaihd.net/v1/images/kamino-main_3001369e.jpeg?region=158%2C0%2C964%2C542"
+        case 10:
+            return "https://lumiere-a.akamaihd.net/v1/images/5a39ae4109aa150001068df9-image_82f4dfcf.jpeg?region=0%2C110%2C2293%2C1289"
+
+        case 11:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_nutegunray_01_169_9d66ded2.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 12:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_jarjarbinks_01_169_c70767ab.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 13:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_watto_01_169_ecd563f1.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 14:
+            return "https://lumiere-a.akamaihd.net/v1/images/sebulba_1f3fe180.jpeg?region=0%2C0%2C2453%2C1380"
+
+        case 15:
+            return "https://lumiere-a.akamaihd.net/v1/images/bib-fortuna-main_376ba1ba.jpeg?region=304%2C0%2C1778%2C1000"
+
+        case 16:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_rattstyerell_01_169_031aea6d.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 17:
+            return "https://static.wikia.nocookie.net/starwars/images/7/73/Dud_Bolt_Podracer_Cockpit.png/revision/latest?cb=20141214155313"
+
+        case 18:
+            return "https://lumiere-a.akamaihd.net/v1/images/gasgano_6f648f83.jpeg?region=0%2C48%2C2252%2C1267"
+
+        case 19:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_benquadinaros_01_169_0c77b6a0.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 20:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_kiadimundi_01_169_0a8842d3.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 21:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_kitfisto_01_169_21517d01.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 22:
+            return "https://lumiere-a.akamaihd.net/v1/images/image_c0d20b99.jpeg?region=158%2C0%2C1244%2C700"
+
+        case 23:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_adigallia_169_8b798f27.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 24:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_saeseetiin_01_169_c9a8a41c.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 25:
+            return "https://lumiere-a.akamaihd.net/v1/images/screen_shot_2015-08-03_at_10_b0b47660.jpeg?region=0%2C361%2C1560%2C878"
+
+        case 26:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_plokoon_01_169_92e6679c.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 27:
+            return "https://lumiere-a.akamaihd.net/v1/images/mas-amedda-main_3e450a61.jpeg?region=237%2C0%2C1445%2C813"
+
+        case 28:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_pogglethelesser_01_169_7095ae3c.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 29:
+            return "https://lumiere-a.akamaihd.net/v1/images/the-tragedy-of-barriss-offee_article-feature_eba352a1.jpeg?region=0%2C0%2C1600%2C900"
+
+        case 30:
+            return "https://lumiere-a.akamaihd.net/v1/images/zam-wesell_bbaffe9f.jpeg?region=190%2C0%2C1180%2C664"
+
+        case 31:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_dexterjettster_01_169_09c89b71.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 32:
+            return "https://lumiere-a.akamaihd.net/v1/images/lama-su-main_63f653f9.jpeg?region=277%2C70%2C1320%2C743"
+
+        case 33:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_technounion_01_169_5f8a9a80.jpeg?region=0%2C0%2C1560%2C878"
+
+        case 34:
+            return "https://lumiere-a.akamaihd.net/v1/images/san-hill_852a226d.jpeg?region=298%2C0%2C1175%2C661"
+
+        case 35:
+            return "https://lumiere-a.akamaihd.net/v1/images/shaak_ti_9523e7c7.jpeg?region=241%2C0%2C1438%2C809"
+
+        case 36:
+            return "https://lumiere-a.akamaihd.net/v1/images/General-Grievous_c9df9cb5.jpeg?region=0%2C0%2C1200%2C675"
+
+        case 37:
+            return "https://lumiere-a.akamaihd.net/v1/images/databank_tionmedon_01_169_bf78864d.jpeg?region=0%2C0%2C1560%2C878"
 
         default:
             return "https://lumiere-a.akamaihd.net/v1/images/swcj-hero-container-mobile_c3fdce51.jpeg?region=0%2C0%2C1600%2C900";

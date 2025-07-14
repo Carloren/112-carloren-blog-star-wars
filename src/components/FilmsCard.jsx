@@ -1,6 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { getFilmsImages } from "../services/StarWarsImages.jsx";
 import { tradEpisode } from "../services/StarWarsServices.jsx";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ export const FilmsCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [film, setFilm] = useState(store.swFilms[index])
+    const film = store.swFilms[index]
 
     const button = (store.favorites.find((item) => item.url === "/films/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(film.title, uid)}><i className="fa-solid fa-heart"></i></button>)

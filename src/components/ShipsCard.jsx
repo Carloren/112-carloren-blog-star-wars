@@ -1,6 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { getShipsImages } from "../services/StarWarsImages.jsx";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export const ShipsCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [ship, setShip] = useState(store.swShips[index])
+    const ship = store.swShips[index]
 
     const button = (store.favorites.find((item) => item.url === "/ships/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(ship.name, uid)}><i className="fa-solid fa-heart"></i></button>)
@@ -31,12 +31,12 @@ export const ShipsCard = ({ uid, index }) => {
     return (
         <div className="my-2 col-4">
             <Card>
-                <Card.Img variant="top" style={{ height: "10.5em", objectFit: "cover" }} src={getShipsImages(uid)} />
+                <Card.Img variant="top" src={getShipsImages(uid)} />
                 <Card.Body className='text-start'>
                     <Card.Title>{ship.name}</Card.Title>
-                    <Card.Text className='my-0 inline-limit'>Fabricante: {ship.manufacturer}</Card.Text>
-                    <Card.Text className='my-0'>Longitud: {ship.length}m</Card.Text>
-                    <Card.Text>Coste: {ship.cost_in_credits == "unknown" ? "desconocido" : ship.cost_in_credits + " créditos"}</Card.Text>
+                    <Card.Text className='my-0 inline-limit'>Fabricante: <i>{ship.manufacturer}</i></Card.Text>
+                    <Card.Text className='my-0'>Longitud: <i>{ship.length + " m"}</i></Card.Text>
+                    <Card.Text>Coste: <i>{ship.cost_in_credits === "unknown" ? "desconocido" : ship.cost_in_credits + " créditos"}</i></Card.Text>
                     <div className="d-flex">
                         <Link to={"/ships/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
                         {button}

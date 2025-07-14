@@ -1,6 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { getPeopleImages } from "../services/StarWarsImages.jsx";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export const PeopleCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [person, setPerson] = useState(store.swPeople[index])
+    const person = store.swPeople[index]
 
     const button = (store.favorites.find((item) => item.url === "/people/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-solid fa-heart"></i></button>)
@@ -34,8 +34,8 @@ export const PeopleCard = ({ uid, index }) => {
                 <Card.Body className='text-start'>
                     <Card.Title>{person.name}</Card.Title>
                     <Card.Text className='my-0'>Nacimiento: <i>{person.birth_year === "unknown" ? "desconocido" : person.birth_year}</i></Card.Text>
-                    <Card.Text className='my-0'>Altura: <i>{person.height === "unknown" ? "desconocida" : person.height + "cm"}</i></Card.Text>
-                    <Card.Text>Peso: <i>{person.mass === "unknown" ? "desconocido" : person.mass + "kg"}</i></Card.Text>
+                    <Card.Text className='my-0'>Altura: <i>{person.height === "unknown" ? "desconocida" : person.height + " cm"}</i></Card.Text>
+                    <Card.Text>Peso: <i>{person.mass === "unknown" ? "desconocido" : person.mass + " kg"}</i></Card.Text>
                     <div className="d-flex">
                         <Link to={"/people/" + uid} className="btn btn-info me-auto">Ficha completa</Link>
                         {button}
