@@ -31,17 +31,16 @@ export const People = () => {
         const personVehicles = ((store.swVehicles.filter((vehicle) => vehicle.pilots.find((url) => url === person.url))));
         const personSpecies = ((store.swSpecies.filter((specie) => specie.people.find((url) => url === person.url))));
 
-        const button = (store.favorites.find((item) => item.url === "/people/" + person.uid) != null) ?
+        const button = (store.favorites.people.find((item) => item.url === "/people/" + person.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(person.name, person.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
 
         function addFavorite(name, id) {
-            if (store.favorites.find((item) => item.url === "/people/" + id) != null) {
-                dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/people/" + id) })
-
+            if (store.favorites.people.find((item) => item.url === "/people/" + id) != null) {
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, people: store.favorites.people.filter((favitem) => favitem.url != "/people/" + id) } })
             } else {
-                dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "people", name: name, url: "/people/" + id, id: id }) })
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, people: store.favorites.people.concat({ name: name, url: "/people/" + id, id: id }) } })
             }
         }
 

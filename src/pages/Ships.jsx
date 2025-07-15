@@ -26,17 +26,16 @@ export const Ships = () => {
 
         const ship = store.swShips.find((item) => item.uid === useParams().id)
 
-        const button = (store.favorites.find((item) => item.url === "/ships/" + ship.uid) != null) ?
+        const button = (store.favorites.ships.find((item) => item.url === "/ships/" + ship.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(ship.name, ship.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(ship.name, ship.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
 
         function addFavorite(name, id) {
-            if (store.favorites.find((item) => item.url === "/ships/" + id) != null) {
-                dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/ships/" + id) })
-
+            if (store.favorites.ships.find((item) => item.url === "/ships/" + id) != null) {
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, ships: store.favorites.ships.filter((favitem) => favitem.url != "/ships/" + id) } })
             } else {
-                dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "ships", name: name, url: "/ships/" + id, id: id }) })
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, ships: store.favorites.ships.concat({ name: name, url: "/ships/" + id, id: id }) } })
             }
         }
 
@@ -68,7 +67,7 @@ export const Ships = () => {
                             :
                             <i key={index}>{getName(url, store.swPeople)}.</i>)}
                     </p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Peículas: {ship.films.length === 0 ?
+                    <p className="fs-5 ps-4 my-0 text-justify">Películas: {ship.films.length === 0 ?
                         <i>No aparece en ninguna</i>
                         :
                         ship.films.map((url, index) => index != (ship.films.length - 1) ?

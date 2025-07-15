@@ -37,22 +37,18 @@ export const Species = () => {
             specie.people
         )
 
-        const button = (store.favorites.find((item) => item.url === "/species/" + specie.uid) != null) ?
+        const button = (store.favorites.species.find((item) => item.url === "/species/" + specie.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(specie.name, specie.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(specie.name, specie.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
 
         function addFavorite(name, id) {
-            if (store.favorites.find((item) => item.url === "/species/" + id) != null) {
-                dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/species/" + id) })
-
+            if (store.favorites.species.find((item) => item.url === "/species/" + id) != null) {
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, species: store.favorites.species.filter((favitem) => favitem.url != "/species/" + id) } })
             } else {
-                dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "species", name: name, url: "/species/" + id, id: id }) })
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, species: store.favorites.species.concat({ name: name, url: "/species/" + id, id: id }) } })
             }
         }
-
-
-
 
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">

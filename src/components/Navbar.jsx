@@ -5,20 +5,41 @@ export const MyNavbar = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
-	const favorites =
-		Object.values(store.favorites).length != 0 ?
-			// 	// ((store.favorites).map((item) => {
-			// 	// 	return (<li key={item.url} className="dropdown-item d-flex position-relative"  >
-			// 	// 		<Link className="dropdown-item" to={item.url}>{item.name}</Link>
-			// 	// 		<button className="crossButton btn rounded-circle hide position-absolute end-0 top-0" onClick={(e) => { e.stopPropagation(); deleteFav(item.url) }}>×</button>
-			// 	// 	</li>)
-			// 	// }))
-			(<p className="dropdown-item disabled my-0 text-center fst-italic">Hay cosas</p>)
-			:
-			(<p className="dropdown-item disabled my-0 text-center fst-italic">No hay ninguno</p>)
+	const getGroupName = (group) => {
+		switch (group) {
+			case "people": return "Personajes"
+			case "films": return "Películas"
+			case "ships": return "Naves"
+			case "vehicles": return "Vehículos"
+			case "species": return "Especies"
+			case "planets": return "Planetas"
 
-	function deleteFav(url) {
-		dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != url) })
+			default: return group
+		}
+	}
+
+	const favorites =
+		(Object.values(store.favorites).filter((i) => i.length != 0).length != 0) ?
+			(<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning" >
+				{Object.keys(store.favorites).map((group) => store.favorites[group].length === 0 ? ""
+					:
+					<div key={group} >
+						<li className="dropdown-item disabled my-0 py-0 fst-italic">{getGroupName(group)}</li>
+						{store.favorites[group].map((favItem) =>
+							< li key={favItem.url} className="dropdown-item d-flex position-relative" >
+								<Link className="dropdown-item" to={favItem.url}>{favItem.name}</Link>
+								<button className="crossButton btn rounded-circle hide position-absolute end-0 top-0" onClick={(e) => { e.stopPropagation(); deleteFav(group, favItem.url) }}>×</button>
+							</li>)}
+					</div>
+				)}
+			</ul >)
+			:
+			(<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning" >
+				<p className="dropdown-item disabled my-0 text-center fst-italic">No hay ninguno</p>
+			</ul>)
+
+	function deleteFav(group, url) {
+		dispatch({ type: "get_favorites", payload: { ...store.favorites, [group]: store.favorites[group].filter((favItem) => favItem.url != url) } })
 	}
 
 	return (
@@ -54,9 +75,7 @@ export const MyNavbar = () => {
 									<button className="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
 										Favoritos
 									</button>
-									<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning" >
-										{favorites}
-									</ul>
+									{favorites}
 								</li>
 							</ul>
 						</div >

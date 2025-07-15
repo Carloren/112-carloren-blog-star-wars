@@ -30,17 +30,16 @@ export const Planets = () => {
 
         const planet = store.swPlanets.find((item) => item.uid === useParams().id)
 
-        const button = (store.favorites.find((item) => item.url === "/planets/" + planet.uid) != null) ?
+        const button = (store.favorites.planets.find((item) => item.url === "/planets/" + planet.uid) != null) ?
             (<button className="btn btn-danger my-3 mx-auto" onClick={() => addFavorite(planet.name, planet.uid)}>Quitar de favoritos <i className="fa-solid fa-heart"></i></button>)
             :
             (<button className="btn btn-outline-danger my-3 mx-auto" onClick={() => addFavorite(planet.name, planet.uid)}>Añadir a favoritos <i className="fa-regular fa-heart"></i></button>)
 
         function addFavorite(name, id) {
-            if (store.favorites.find((item) => item.url === "/planets/" + id) != null) {
-                dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/planets/" + id) })
-
+            if (store.favorites.planets.find((item) => item.url === "/planets/" + id) != null) {
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, planets: store.favorites.planets.filter((favitem) => favitem.url != "/planets/" + id) } })
             } else {
-                dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "planets", name: name, url: "/planets/" + id, id: id }) })
+                dispatch({ type: "get_favorites", payload: { ...store.favorites, planets: store.favorites.planets.concat({ name: name, url: "/planets/" + id, id: id }) } })
             }
         }
 
