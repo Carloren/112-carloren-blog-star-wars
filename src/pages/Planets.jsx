@@ -14,7 +14,7 @@ export const Planets = () => {
         if (useParams().id === "all") {
             return (
                 <div className="container d-flex flex-column text-center mt-5">
-                    <h2 className="text-info long-time-ago">Naves y Estaciones espaciales</h2>
+                    <h2 className="text-info long-time-ago">Planetas de la galaxia</h2>
                     <div className="row justify-content-center gx-3">
                         {store.swPlanets.map((planet, i) => {
                             if (planet.name != "unknown") {
@@ -127,7 +127,7 @@ export const Planets = () => {
 
         return (
             <div className="container d-flex flex-column text-center mt-5">
-                <h2 className="text-info long-time-ago">Naves y Estaciones espaciales</h2>
+                <h2 className="text-info long-time-ago">Planetas de la galaxia</h2>
                 <div className="tab-content" id="pills-tabContent">
                     {pages}
                 </div>

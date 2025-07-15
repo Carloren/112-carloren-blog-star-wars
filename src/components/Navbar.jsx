@@ -5,15 +5,17 @@ export const MyNavbar = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
-	const favorites = store.favorites.length != 0 ?
-		((store.favorites).map((item) => {
-			return (<li key={item.url} className="dropdown-item d-flex position-relative"  >
-				<Link className="dropdown-item" to={item.url}>{item.name}</Link>
-				<button className="crossButton btn rounded-circle hide position-absolute end-0 top-0" onClick={(e) => { e.stopPropagation(); deleteFav(item.url) }}>×</button>
-			</li>)
-		}))
-		:
-		(<p className="dropdown-item disabled my-0 text-center fst-italic">No hay ninguno</p>)
+	const favorites =
+		Object.values(store.favorites).length != 0 ?
+			// 	// ((store.favorites).map((item) => {
+			// 	// 	return (<li key={item.url} className="dropdown-item d-flex position-relative"  >
+			// 	// 		<Link className="dropdown-item" to={item.url}>{item.name}</Link>
+			// 	// 		<button className="crossButton btn rounded-circle hide position-absolute end-0 top-0" onClick={(e) => { e.stopPropagation(); deleteFav(item.url) }}>×</button>
+			// 	// 	</li>)
+			// 	// }))
+			(<p className="dropdown-item disabled my-0 text-center fst-italic">Hay cosas</p>)
+			:
+			(<p className="dropdown-item disabled my-0 text-center fst-italic">No hay ninguno</p>)
 
 	function deleteFav(url) {
 		dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != url) })

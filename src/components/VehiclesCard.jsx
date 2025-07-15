@@ -10,17 +10,16 @@ export const VehiclesCard = ({ uid, index }) => {
 
     const vehicle = store.swVehicles[index]
 
-    const button = (store.favorites.find((item) => item.url === "/vehicles/" + uid) != null) ?
+    const button = (store.favorites.vehicles.find((item) => item.url === "/vehicles/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(vehicle.name, uid)}><i className="fa-solid fa-heart"></i></button>)
         :
         (<button className="btn btn-outline-danger" onClick={() => addFavorite(vehicle.name, uid)}><i className="fa-regular fa-heart"></i></button>)
 
     function addFavorite(name, id) {
-        if (store.favorites.find((item) => item.url === "/vehicles/" + id) != null) {
-            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/vehicles/" + id) })
-
+        if (store.favorites.vehicles.find((item) => item.url === "/vehicles/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, vehicles: store.favorites.vehicles.filter((favitem) => favitem.url != "/vehicles/" + id) } })
         } else {
-            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "vehicles", name: name, url: "/vehicles/" + id, id: id }) })
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, vehicles: store.favorites.vehicles.concat({ name: name, url: "/vehicles/" + id, id: id }) } })
         }
     }
 

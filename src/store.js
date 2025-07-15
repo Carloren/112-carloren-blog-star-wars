@@ -7,7 +7,7 @@ export const initialStore = () => {
     swVehicles: (localStorage.getItem("vehicles") != null) ? JSON.parse(localStorage.getItem("vehicles")) : [],
     swSpecies: (localStorage.getItem("species") != null) ? JSON.parse(localStorage.getItem("species")) : [],
     swPlanets: (localStorage.getItem("planets") != null) ? JSON.parse(localStorage.getItem("planets")) : [],
-    favorites: (localStorage.getItem("favorites") != null) ? JSON.parse(localStorage.getItem("favorites")) : []
+    favorites: (localStorage.getItem("favorites") != null) ? JSON.parse(localStorage.getItem("favorites")) : { people: [], films: [], ships: [], vehicles: [], species: [], planets: [] }
   }
 }
 

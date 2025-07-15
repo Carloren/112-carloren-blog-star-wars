@@ -11,17 +11,16 @@ export const FilmsCard = ({ uid, index }) => {
 
     const film = store.swFilms[index]
 
-    const button = (store.favorites.find((item) => item.url === "/films/" + uid) != null) ?
-        (<button className="btn btn-danger" onClick={() => addFavorite(film.title, uid)}><i className="fa-solid fa-heart"></i></button>)
+    const button = (store.favorites.films.find((item) => item.url === "/films/" + uid) != null) ?
+        (<button className="btn btn-danger" onClick={() => addFavorite(film.name, uid)}><i className="fa-solid fa-heart"></i></button>)
         :
-        (<button className="btn btn-outline-danger" onClick={() => addFavorite(film.title, uid)}><i className="fa-regular fa-heart"></i></button>)
+        (<button className="btn btn-outline-danger" onClick={() => addFavorite(film.name, uid)}><i className="fa-regular fa-heart"></i></button>)
 
     function addFavorite(name, id) {
-        if (store.favorites.find((item) => item.url === "/films/" + id) != null) {
-            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/films/" + id) })
-
+        if (store.favorites.films.find((item) => item.url === "/films/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, films: store.favorites.films.filter((favitem) => favitem.url != "/films/" + id) } })
         } else {
-            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "films", name: name, url: "/films/" + id, id: id }) })
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, films: store.favorites.films.concat({ name: name, url: "/films/" + id, id: id }) } })
         }
     }
 

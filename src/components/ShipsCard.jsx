@@ -10,17 +10,16 @@ export const ShipsCard = ({ uid, index }) => {
 
     const ship = store.swShips[index]
 
-    const button = (store.favorites.find((item) => item.url === "/ships/" + uid) != null) ?
+    const button = (store.favorites.ships.find((item) => item.url === "/ships/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(ship.name, uid)}><i className="fa-solid fa-heart"></i></button>)
         :
         (<button className="btn btn-outline-danger" onClick={() => addFavorite(ship.name, uid)}><i className="fa-regular fa-heart"></i></button>)
 
     function addFavorite(name, id) {
-        if (store.favorites.find((item) => item.url === "/ships/" + id) != null) {
-            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/ships/" + id) })
-
+        if (store.favorites.ships.find((item) => item.url === "/ships/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, ships: store.favorites.ships.filter((favitem) => favitem.url != "/ships/" + id) } })
         } else {
-            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "ships", name: name, url: "/ships/" + id, id: id }) })
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, ships: store.favorites.ships.concat({ name: name, url: "/ships/" + id, id: id }) } })
         }
     }
 

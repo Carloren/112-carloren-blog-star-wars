@@ -8,19 +8,18 @@ export const SpeciesCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [specie, setSpecie] = useState(store.swSpecies[index])
+    const specie = store.swSpecies[index]
 
-    const button = (store.favorites.find((item) => item.url === "/species/" + uid) != null) ?
+    const button = (store.favorites.species.find((item) => item.url === "/species/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(specie.name, uid)}><i className="fa-solid fa-heart"></i></button>)
         :
         (<button className="btn btn-outline-danger" onClick={() => addFavorite(specie.name, uid)}><i className="fa-regular fa-heart"></i></button>)
 
     function addFavorite(name, id) {
-        if (store.favorites.find((item) => item.url === "/species/" + id) != null) {
-            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/species/" + id) })
-
+        if (store.favorites.species.find((item) => item.url === "/species/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, species: store.favorites.species.filter((favitem) => favitem.url != "/species/" + id) } })
         } else {
-            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "species", name: name, url: "/species/" + id, id: id }) })
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, species: store.favorites.species.concat({ name: name, url: "/species/" + id, id: id }) } })
         }
     }
 

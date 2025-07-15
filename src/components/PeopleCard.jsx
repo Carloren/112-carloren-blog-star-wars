@@ -10,16 +10,16 @@ export const PeopleCard = ({ uid, index }) => {
 
     const person = store.swPeople[index]
 
-    const button = (store.favorites.find((item) => item.url === "/people/" + uid) != null) ?
+    const button = (store.favorites.people.find((item) => item.url === "/people/" + uid) != null) ?
         (<button className="btn btn-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-solid fa-heart"></i></button>)
         :
         (<button className="btn btn-outline-danger" onClick={() => addFavorite(person.name, uid)}><i className="fa-regular fa-heart"></i></button>)
 
     function addFavorite(name, id) {
-        if (store.favorites.find((item) => item.url === "/people/" + id) != null) {
-            dispatch({ type: "get_favorites", payload: store.favorites.filter((favitem) => favitem.url != "/people/" + id) })
+        if (store.favorites.people.find((item) => item.url === "/people/" + id) != null) {
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, people: store.favorites.people.filter((favitem) => favitem.url != "/people/" + id) } })
         } else {
-            dispatch({ type: "get_favorites", payload: store.favorites.concat({ group: "people", name: name, url: "/people/" + id, id: id }) })
+            dispatch({ type: "get_favorites", payload: { ...store.favorites, people: store.favorites.people.concat({ name: name, url: "/people/" + id, id: id }) } })
         }
     }
 

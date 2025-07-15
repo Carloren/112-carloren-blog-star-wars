@@ -14,7 +14,7 @@ export const Species = () => {
         if (useParams().id === "all") {
             return (
                 <div className="container d-flex flex-column text-center mt-5">
-                    <h2 className="text-info long-time-ago">Naves y Estaciones espaciales</h2>
+                    <h2 className="text-info long-time-ago">Especies conocidas</h2>
                     <div className="row justify-content-center gx-3">
                         {store.swSpecies.map((specie, i) => (<SpeciesCard key={i} uid={specie.url.match(/(\d+)/)[0]} index={i} />))}
                     </div>
@@ -134,7 +134,7 @@ export const Species = () => {
 
         return (
             <div className="container d-flex flex-column text-center mt-5">
-                <h2 className="text-info long-time-ago">Naves y Estaciones espaciales</h2>
+                <h2 className="text-info long-time-ago">Especies conocidas</h2>
                 <div className="tab-content" id="pills-tabContent">
                     {pages}
                 </div>
