@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { getFilmsImages } from "../services/StarWarsImages.jsx";
 import { tradEpisode } from "../services/StarWarsServices.jsx";
 import { Link } from "react-router-dom";
-
+                                                           //Este archivo funciona igual que PeopleCard.jsx, allí están las anotaciones del contenido
 export const FilmsCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()

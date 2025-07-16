@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getFilmsImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { getName, tradEpisode } from "../services/StarWarsServices";
-
+                                                           //Este archivo funciona igual que People.jsx, allí están las anotaciones del contenido
 export const Films = () => {
 
     const { store, dispatch } = useGlobalReducer()
@@ -54,7 +54,7 @@ export const Films = () => {
             <div className="container d-flex flex-column text-center mt-5">
                 <h2 className="text-info long-time-ago">Películas de la saga</h2>
                 <div className="row justify-content-center gx-3">
-                    {store.swFilms.map((film, i) => (<FilmsCard key={i} uid={film.url.match(/(\d+)/)[0]} index={i} />))}
+                    {store.swFilms.map((film, i) => (<FilmsCard key={i} uid={film.uid} index={i} />))}
                 </div>
                 <a className="btn btn-warning mx-auto mt-3" href="#">Volver arriba</a>
             </div>

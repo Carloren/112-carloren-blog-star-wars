@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { getPlanetsImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { getName } from "../services/StarWarsServices";
-
+                                                           //Este archivo funciona igual que People.jsx, allí están las anotaciones del contenido
 export const Planets = () => {
 
     const { store, dispatch } = useGlobalReducer()
@@ -18,7 +18,7 @@ export const Planets = () => {
                     <div className="row justify-content-center gx-3">
                         {store.swPlanets.map((planet, i) => {
                             if (planet.name != "unknown") {
-                                return (<PlanetsCard key={i} uid={planet.url.match(/(\d+)/)[0]} index={i} />)
+                                return (<PlanetsCard key={i} uid={planet.uid} index={i} />)
                             }
                         })}
                     </div>
@@ -107,7 +107,7 @@ export const Planets = () => {
                                 if (planet.name != "unknown") {
 
                                     if (i >= 9 * (index) && i < 9 * (index + 1)) {
-                                        return (<PlanetsCard key={i} uid={planet.url.match(/(\d+)/)[0]} index={i} />)
+                                        return (<PlanetsCard key={i} uid={planet.uid} index={i} />)
                                     }
                                 }
                             })}

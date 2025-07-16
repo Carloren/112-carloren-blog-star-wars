@@ -1,9 +1,9 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 import { getSpeciesImages } from "../services/StarWarsImages.jsx";
 import { Link } from "react-router-dom";
-
+                                                           //Este archivo funciona igual que PeopleCard.jsx, allí están las anotaciones del contenido
 export const SpeciesCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()

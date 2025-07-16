@@ -4,18 +4,32 @@ body {
     background-size: 100%;
 }
 
+.close-navbar-toggler {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+                                        /*Estos dos .close-navbar son para poder cerrar el navbar tocando fuera del mismo*/
+.close-navbar-toggler.collapsed {
+    z-index: -1;
+}
+
 .text-justify {
-    text-align: justify;
+    text-align: justify;                /*Por algún motivo a bootstrap no le gusta y no tiene justificación de texto*/
 }
 
 .inline-limit {
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden;                   /*Controlo mejor el contenido y el tamaño de las cards si todo está en una sola línea y controlo el overflow*/
     text-overflow: ellipsis;
 }
 
 .navbar {
-    max-height: 390px;
+    max-height: 390px;                  /*Para cuando se abra el navbar en pantallas pequeñas y que no ocupe todo lo que se expande la lista de favoritos*/
 }
 
 .navbar-brand {
@@ -26,7 +40,7 @@ body {
 
 .navbar-brand:hover {
     img {
-        opacity: 0.7 !important;
+        opacity: 0.7 !important;        /*Los tres .navbar-brand son para que el logo reaccione al click y al hover*/
     }
 }
 
@@ -46,21 +60,21 @@ body {
     background-color: black;
 }
 
-.form-control:focus {
+.form-control:focus {                   /*Personalización del input de búsqueda, más acorde con la página*/
     background-color: black;
     border-color: #0dcaf0;
     box-shadow: #0dcaf0 0px 0px 10px 2px
 }
 
 .dropdown-menu-end {
-    overflow-y: auto;
+    overflow-y: auto;                   /*Evita que la lista de favoritos supere la pantalla*/
     max-height: 90vh;
 }
 
 .hide {
     display: none;
-}
-
+}                                       /*Desde .hide hasta .crossButton:active controlan la aparición del 
+                                            botón x para eliminar elementos de la favList y su respuesta al ratón*/
 li:hover>.hide {
     display: block;
 }
@@ -89,15 +103,16 @@ li:hover>.hide {
 .divider {
     margin-top: 46px !important;
     flex-grow: 1;
-    height: 1px;
+    height: 1px;                        /*¿Alguien ha pedido un divisor láser?*/
     background-color: white;
     box-shadow: #0dcaf0 0px 0px 5px 3px
 }
 
-.carousel {
-    img {
-        transition: 0.5s;
-    }
+
+.carousel-img {
+    aspect-ratio: 3;
+    object-fit: cover;
+    transition: 0.5s;
 }
 
 .carousel:hover {
@@ -110,8 +125,8 @@ li:hover>.hide {
     img {
         opacity: 0.3;
     }
-}
-
+}                                       /*Todos los .carousel controlan su respuesta al ratón y aspecto,
+                                            no respondía de forma nativa al tema oscuro como otros elementos*/
 .carousel-caption>* {
     color: white !important;
     text-shadow: black 0px 0px 10px !important
@@ -134,23 +149,21 @@ li:hover>.hide {
     background: none;
     border-color: #0dcaf0;
 }
-
+                                        /*Personalización y control de imagen de las tarjetas*/
 .card-img-top {
     aspect-ratio: 16/9;
     object-fit: cover
 }
-
+                                        /*↓↓↓ Tooodos estos .hide-(x,y,scroll) controlan el aspecto y el espacio de algunos deslizadores */
 .hide-x {
     overflow-x: hidden;
     margin-bottom: 5px;
 }
 
-
 .hide-x:hover {
     overflow-x: auto;
     margin-bottom: 0px;
 }
-
 .hide-y {
     overflow-y: hidden;
     padding-right: 5px;
@@ -183,7 +196,7 @@ li:hover>.hide {
 .hide-scroll::-webkit-scrollbar-thumb:hover {
     background: cyan;
 }
-
+                                        /*↓↓↓ Los .detail controlan los tamaños y posiciones de las vistas detalladas y sus enlaces*/
 .detail-title {
     font-size: 6rem;
     text-shadow: black 0 0 10px !important;
@@ -210,26 +223,10 @@ li:hover>.hide {
     box-shadow: #0dcaf0 0px 0px 20px 5px
 }
 
-.nav-page {
-    color: #0dcaf0 !important;
-    border: 1px solid transparent;
-}
-
-.nav-page:hover {
-    color: #0dcaf0 !important;
-    border: 1px solid #0dcaf0;
-}
-
-.nav-page.active {
-    background-color: #0dcaf0 !important;
-    color: black !important;
-}
-
 .detail-link {
     text-decoration: none !important;
     color: #0dcaf0;
     transition: 0.3s;
-
 }
 
 .detail-link:hover {
@@ -240,12 +237,22 @@ li:hover>.hide {
     color: #0dcaf0;
 }
 
-.carousel-img {
-    aspect-ratio: 3;
-    object-fit: cover
+.nav-page {
+    color: #0dcaf0 !important;
+    border: 1px solid transparent;
 }
 
-@media (max-width: 768px) {
+.nav-page:hover {
+    color: #0dcaf0 !important;          /*Estos .nav-page dan más vidilla a los botones de las páginas en las vistas de grupo*/
+    border: 1px solid #0dcaf0;
+}
+
+.nav-page.active {
+    background-color: #0dcaf0 !important;
+    color: black !important;
+}
+
+@media (max-width: 768px) {             /*¿A quién no le va a gustar un mobile-first? 😎*/
 
     .hide {
         display: block;

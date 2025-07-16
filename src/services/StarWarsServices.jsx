@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom"
 
+//-------------------FUNCIONES FETCH--------------------
 export async function getPeople() {
     try {
         let response = await fetch('https://swapi.info/api/people')
         let data = await response.json()
-        if (response.ok) {
+        if (response.ok) {                                              //↓↓↓ agrego info valiosa a cada objeto para tratarlos mejor, como su uid y la url local
             data = data.map((item) => { return { ...item, uid: item.url.match(/(\d+)/)[0], page: "/people/" + item.url.match(/(\d+)/)[0] } })
-            localStorage.setItem("people", JSON.stringify(data))
-            return (data)
+            localStorage.setItem("people", JSON.stringify(data))        //-------↑ Esto me permite quedarme solo con el número de su url de API, para generar un uid
+            return (data)           //↑↑ Al hacer el fetch lo cargamos directamente en el almacenamiento local del navegador
         }
     }
     catch (error) {
@@ -30,7 +31,7 @@ export async function getFilms() {
     }
 }
 
-export function tradEpisode(num) {
+export function tradEpisode(num) {                  //Es una pijotada pero los ep. de SW SIEMPRE con números romanos
     switch (parseInt(num)) {
         case 1:
             return "I"
@@ -108,7 +109,7 @@ export async function getPlanets() {
         console.log(error);
     }
 }
-
+                                                                        //Esta funcion sirve para, dada una url de elemento API, convertirla en su nombre y su enlace de página local
 export const getName = (url, group) => group[0].name != null ?
     group.find((item) => item.url === url).name === "unknown" ?
         "desconocido"

@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { useEffect } from "react"
 import { getShipsImages } from "../services/StarWarsImages.jsx";
 import { Link } from "react-router-dom";
-
+                                                           //Este archivo funciona igual que PeopleCard.jsx, allí están las anotaciones del contenido
 export const ShipsCard = ({ uid, index }) => {
 
     const { store, dispatch } = useGlobalReducer()

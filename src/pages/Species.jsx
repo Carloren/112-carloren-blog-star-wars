@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { getSpeciesImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { getName } from "../services/StarWarsServices";
-
-export const Species = () => {
+                                                           //Este archivo funciona igual que People.jsx, allí están las anotaciones del contenido
+export const Species = () => {                                              //Aunque con un agregado que puedes leer más abajo
 
     const { store, dispatch } = useGlobalReducer()
 
@@ -16,7 +16,7 @@ export const Species = () => {
                 <div className="container d-flex flex-column text-center mt-5">
                     <h2 className="text-info long-time-ago">Especies conocidas</h2>
                     <div className="row justify-content-center gx-3">
-                        {store.swSpecies.map((specie, i) => (<SpeciesCard key={i} uid={specie.url.match(/(\d+)/)[0]} index={i} />))}
+                        {store.swSpecies.map((specie, i) => (<SpeciesCard key={i} uid={specie.uid} index={i} />))}
                     </div>
                     <Link className="btn btn-outline-info mx-auto mt-3" to="/species">Vista de páginas</Link>
                     <a className="btn btn-warning mx-auto mt-3" href="#">Volver arriba</a>
@@ -112,7 +112,7 @@ export const Species = () => {
                         <div className="row justify-content-center gx-3">
                             {store.swSpecies.map((specie, i) => {
                                 if (i >= 9 * (index) && i < 9 * (index + 1)) {
-                                    return (<SpeciesCard key={i} uid={specie.url.match(/(\d+)/)[0]} index={i} />)
+                                    return (<SpeciesCard key={i} uid={specie.uid} index={i} />)
                                 }
                             })}
                         </div>

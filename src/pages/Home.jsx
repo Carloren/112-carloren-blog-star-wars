@@ -11,13 +11,13 @@ import { SpeciesCard } from "../components/SpeciesCard.jsx";
 import { PlanetsCard } from "../components/PlanetsCard.jsx";
 
 export const Home = () => {
-
+	
 	const { store, dispatch } = useGlobalReducer()
 
 	useEffect(() => {
 		//------------------------CARGAR PERSONAS----------------------
 		if (localStorage.getItem("people") == null) {
-
+																		// Si no existen ya en el navegador, se guarda el fetch en los estados globales
 			getPeople().then((data) => dispatch({ type: "get_people", payload: data }))
 
 		}
@@ -57,15 +57,17 @@ export const Home = () => {
 	return (
 		<div className="container text-center mt-5">
 			<h2 className="text-info mb-5 long-time-ago">Hace mucho tiempo, en una galaxia muy muy lejana...</h2>
-			<MainCarousel />														{/*-------PERSONAS------- */}
+
+			<MainCarousel />
+																					{/*-------PERSONAS------- */}
 			<Link to="/people/" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Personajes</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
 			<div className="container-fluid d-flex mt-2">
 				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
-					{store.swPeople.map((person, index) => {
-						if (index < 10) {
+					{store.swPeople.map((person, index) => {			// Por cada elemento, una tarjeta
+						if (index < 10) {					// ← En la pantalla principal solo cargamos 10 tarjetas
 							return (
 								<PeopleCard key={index} uid={person.uid} index={index} />
 							)
@@ -96,10 +98,10 @@ export const Home = () => {
 			</Link>
 			<div className="container-fluid d-flex mt-2">
 				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
-					{store.swShips.map((film, index) => {
+					{store.swShips.map((ship, index) => {
 						if (index < 10) {
 							return (
-								<ShipsCard key={index} uid={film.uid} index={index} />
+								<ShipsCard key={index} uid={ship.uid} index={index} />
 							)
 						}
 					})}
@@ -112,10 +114,10 @@ export const Home = () => {
 			</Link>
 			<div className="container-fluid d-flex mt-2">
 				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
-					{store.swVehicles.map((film, index) => {
+					{store.swVehicles.map((vehicle, index) => {
 						if (index < 10) {
 							return (
-								<VehiclesCard key={index} uid={film.uid} index={index} />
+								<VehiclesCard key={index} uid={vehicle.uid} index={index} />
 							)
 						}
 					})}
@@ -128,10 +130,10 @@ export const Home = () => {
 			</Link>
 			<div className="container-fluid d-flex mt-2">
 				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
-					{store.swSpecies.map((film, index) => {
+					{store.swSpecies.map((specie, index) => {
 						if (index < 10) {
 							return (
-								<SpeciesCard key={index} uid={film.uid} index={index} />
+								<SpeciesCard key={index} uid={specie.uid} index={index} />
 							)
 						}
 					})}

@@ -8,7 +8,7 @@ import Planets from '../assets/img/planets.jpg'
 import { Link } from 'react-router-dom';
 
 function MainCarousel() {
-    return (
+    return (                                              //Este carrusel está hecho con una librería de bootsrap específica para react
         <div className='border border-0 mb-3'>
             <Carousel>
                 <Carousel.Item >

@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { getVehiclesImages } from "../services/StarWarsImages";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { getName } from "../services/StarWarsServices";
-
+                                                           //Este archivo funciona igual que People.jsx, allí están las anotaciones del contenido
 export const Vehicles = () => {
 
     const { store, dispatch } = useGlobalReducer()
@@ -16,7 +16,7 @@ export const Vehicles = () => {
                 <div className="container d-flex flex-column text-center mt-5">
                     <h2 className="text-info long-time-ago">Vehículos terrestres y cazas</h2>
                     <div className="row justify-content-center gx-3">
-                        {store.swVehicles.map((vehicle, i) => (<VehiclesCard key={i} uid={vehicle.url.match(/(\d+)/)[0]} index={i} />))}
+                        {store.swVehicles.map((vehicle, i) => (<VehiclesCard key={i} uid={vehicle.uid} index={i} />))}
                     </div>
                     <Link className="btn btn-outline-info mx-auto mt-3" to="/vehicles">Vista de páginas</Link>
                     <a className="btn btn-warning mx-auto mt-3" href="#">Volver arriba</a>
@@ -102,7 +102,7 @@ export const Vehicles = () => {
                         <div className="row justify-content-center gx-3">
                             {store.swVehicles.map((vehicle, i) => {
                                 if (i >= 9 * (index) && i < 9 * (index + 1)) {
-                                    return (<VehiclesCard key={i} uid={vehicle.url.match(/(\d+)/)[0]} index={i} />)
+                                    return (<VehiclesCard key={i} uid={vehicle.uid} index={i} />)
                                 }
                             })}
                         </div>

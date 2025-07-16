@@ -3,7 +3,7 @@ export const initialStore = () => {
     message: null,
     swPeople: (localStorage.getItem("people") != null) ? JSON.parse(localStorage.getItem("people")) : [],
     swFilms: (localStorage.getItem("films") != null) ? JSON.parse(localStorage.getItem("films")) : [],
-    swShips: (localStorage.getItem("ships") != null) ? JSON.parse(localStorage.getItem("ships")) : [],
+    swShips: (localStorage.getItem("ships") != null) ? JSON.parse(localStorage.getItem("ships")) : [],        //Si están ya en la memoria del navegador, se lo traen.
     swVehicles: (localStorage.getItem("vehicles") != null) ? JSON.parse(localStorage.getItem("vehicles")) : [],
     swSpecies: (localStorage.getItem("species") != null) ? JSON.parse(localStorage.getItem("species")) : [],
     swPlanets: (localStorage.getItem("planets") != null) ? JSON.parse(localStorage.getItem("planets")) : [],

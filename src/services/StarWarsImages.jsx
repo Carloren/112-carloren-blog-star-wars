@@ -1,3 +1,6 @@
+//-------------------Imágenes de cada elemento, esto es hardcoded ya que la API no proporciona imágenes--------------------
+//--otra alternativa era meter las imágenes en carpetas y con el nombre de cada uid, pero igualmente había que hacerlo una por una
+
 export function getPeopleImages(uid) {
     switch (parseInt(uid)) {
         case 1:
