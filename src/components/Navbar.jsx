@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
+import { useState } from "react";
 
 export const MyNavbar = () => {
 
@@ -18,7 +19,7 @@ export const MyNavbar = () => {
 		}
 	}
 
-	const favorites =
+	const favorites = (
 		(Object.values(store.favorites).filter((i) => i.length != 0).length != 0) ?
 			(<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning hide-scroll hide-y" >
 				{Object.keys(store.favorites).map((group) => store.favorites[group].length === 0 ? ""
@@ -37,6 +38,35 @@ export const MyNavbar = () => {
 			(<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning" >
 				<p className="dropdown-item disabled my-0 text-center fst-italic">No hay ninguno</p>
 			</ul>)
+	)
+
+	const searchList = (
+		store.swPeople.map((person) => <option key={"person" + person.uid} value={person.name}>Personaje</option>)
+			.concat(store.swFilms.map((film) => <option key={"film" + film.uid} value={film.title}>Película</option>))
+			.concat(store.swShips.map((ship) => <option key={"ship" + ship.uid} value={ship.name}>Nave</option>))
+			.concat(store.swVehicles.map((vehicle) => <option key={"vehicle" + vehicle.uid} value={vehicle.name}>Vehículo</option>))
+			.concat(store.swSpecies.map((specie) => <option key={"specie" + specie.uid} value={specie.name}>Especie</option>))
+			.concat(store.swPlanets.map((planet) => <option key={"planet" + planet.uid} value={planet.name}>Planeta</option>))
+	)
+
+	const [searchButton, setSearching] = useState(<Link type="button" className="btn btn-outline-info">Buscar</Link>)
+
+	function searchPage(event) {
+		let searchItem = ((store.swPeople
+			.concat(store.swFilms)
+			.concat(store.swShips)
+			.concat(store.swVehicles)
+			.concat(store.swSpecies)
+			.concat(store.swPlanets)
+			.find((item) => item.name === event.target.value || item.title === event.target.value)))
+
+		if (searchItem != null) {
+			setSearching(<Link type="button" className="btn btn-outline-info" to={searchItem.page}>Buscar</Link>)
+		}
+		else {
+			setSearching(<Link type="button" data-bs-toggle="modal" data-bs-target="#searchModal" className="btn btn-outline-info">Buscar</Link>)
+		}
+	}
 
 	function deleteFav(group, url) {
 		dispatch({ type: "get_favorites", payload: { ...store.favorites, [group]: store.favorites[group].filter((favItem) => favItem.url != url) } })
@@ -63,8 +93,11 @@ export const MyNavbar = () => {
 							</ul>
 							<ul className="navbar-nav align-self-start">
 								<form className="d-flex my-2" role="search">
-									<input id="search" className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-									<button className="btn btn-outline-info" type="submit">Buscar</button>
+									<input id="search" className="form-control me-2" list="datalistOptions" type="search" placeholder="Buscar" aria-label="Search" onChange={searchPage} />
+									{searchButton}
+									<datalist id="datalistOptions" className="text-center">
+										{searchList}
+									</datalist>
 								</form>
 								<li className="nav-link dropdown text-end pe-0">
 									<button className="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
@@ -77,6 +110,23 @@ export const MyNavbar = () => {
 					</div>
 				</div >
 			</nav >
+			<div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+				<div className="modal-dialog">
+					<div className="modal-content bg-black border-info">
+						<div className="modal-header">
+							<h1 className="modal-title fs-5 text-warning" id="searchModalLabel">Error de búsqueda</h1>
+							<button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div className="modal-body">
+							Tu búsqueda no ha dado resultado, vuelve a intentarlo escribiendo el nombre correctamente.<br />
+							Puedes ayudarte del autocompletar
+						</div>
+						<div className="modal-footer">
+							<button type="button" className="btn btn-outline-danger" data-bs-dismiss="modal">OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
