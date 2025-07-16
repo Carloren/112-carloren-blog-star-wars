@@ -48,18 +48,18 @@ export const People = () => {
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
                     <img className="rounded-top w-100 detail-image" src={getPeopleImages(person.uid)} />
-                    <h1 className="detail-title position-absolute bottom-0">{person.name}</h1>
+                    <h1 className="detail-title px-2 px-md-3 ps-3 position-absolute bottom-0">{person.name}</h1>
                 </div>
-                <div className="container ms-0 row row-cols2">
-                    <p className="col-4 fs-5 ps-4">Nacimiento: <i>{person.birth_year === "unknown" ? "desconocido" : person.birth_year}</i></p>
-                    <p className="col-4 fs-5 ps-4">Planeta natal: <i>{person.homeworld === "unknown" ? "desconocido" : getName(person.homeworld, store.swPlanets)}</i></p>
-                    <p className="col-4 fs-5 ps-4">Género: <i>{person.gender === "unknown" ? "desconocido" : person.gender}</i></p>
-                    <p className="col-4 fs-5 ps-4">Piel: <i>{person.skin_color === "unknown" ? "desconocido" : person.skin_color}</i></p>
-                    <p className="col-4 fs-5 ps-4">Altura: <i>{person.height === "unknown" ? "desconocido" : person.height + "cm"}</i></p>
-                    <p className="col-4 fs-5 ps-4">Peso: <i>{person.mass === "unknown" ? "desconocido" : person.mass + "kg"}</i></p>
-                    <p className="col-4 fs-5 ps-4">Pelo: <i>{person.hair_color === "unknown" ? "desconocido" : person.hair_color}</i></p>
-                    <p className="col-4 fs-5 ps-4">Ojos: <i>{person.eye_color === "unknown" ? "desconocido" : person.eye_color}</i></p>
-                    <p className="col-12 fs-5 ps-4">Películas: <i>{personFilms.length != 0 ?
+                <div className="container px-2 px-md-3 ms-0 row row-cols2">
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Nacimiento: <i>{person.birth_year === "unknown" ? "desconocido" : person.birth_year}</i></p>
+                    <p className="col- col-md-4 fs-5 text-justify px-2 px-md-3">Planeta natal: <i>{person.homeworld === "unknown" ? "desconocido" : getName(person.homeworld, store.swPlanets)}</i></p>
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Género: <i>{person.gender === "unknown" ? "desconocido" : person.gender}</i></p>
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Piel: <i>{person.skin_color === "unknown" ? "desconocido" : person.skin_color}</i></p>
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Altura: <i>{person.height === "unknown" ? "desconocido" : person.height + "cm"}</i></p>
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Peso: <i>{person.mass === "unknown" ? "desconocido" : person.mass + "kg"}</i></p>
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Pelo: <i>{person.hair_color === "unknown" ? "desconocido" : person.hair_color}</i></p>
+                    <p className="col-12 col-md-4 fs-5 text-justify px-2 px-md-3">Ojos: <i>{person.eye_color === "unknown" ? "desconocido" : person.eye_color}</i></p>
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3">Películas: <i>{personFilms.length != 0 ?
                         personFilms.map((item, index) => index != (personFilms.length - 1) ?
                             <span key={index}><Link className="detail-link" to={item.page} >{item.title}</Link>, </span>
                             :
@@ -68,7 +68,7 @@ export const People = () => {
                         "No aparece en ninguna"}
                     </i>
                     </p>
-                    <p className="col-12 fs-5 ps-4">Naves: <i>{personShips.length != 0 ?
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3">Naves: <i>{personShips.length != 0 ?
                         personShips.map((item, index) => index != (personShips.length - 1) ?
                             <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
                             :
@@ -77,7 +77,7 @@ export const People = () => {
                         "No tiene"}
                     </i>
                     </p>
-                    <p className="col-12 fs-5 ps-4">Vehículos: <i>{personVehicles.length != 0 ?
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3">Vehículos: <i>{personVehicles.length != 0 ?
                         personVehicles.map((item, index) => index != (personVehicles.length - 1) ?
                             <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
                             :
@@ -86,7 +86,7 @@ export const People = () => {
                         "No tiene"}
                     </i>
                     </p>
-                    <p className="col-12 fs-5 ps-4">Especie: <i>{personSpecies.length != 0 ?
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3">Especie: <i>{personSpecies.length != 0 ?
                         personSpecies.map((item, index) => index != (personSpecies.length - 1) ?
                             <span key={index}><Link className="detail-link" to={item.page} >{item.name}</Link>, </span>
                             :

@@ -46,21 +46,21 @@ export const Planets = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getPlanetsImages(planet.uid)} />
-                    <div className="detail-title position-absolute bottom-0">
+                    <img className="rounded-top w-100 detail-image" src={getPlanetsImages(planet.uid)} />
+                    <div className="detail-title mx-2 mx-md-3 px-2 px-md-3 position-absolute bottom-0">
                         <h1>{planet.name}</h1>
                     </div>
                 </div>
-                <div className="container ms-0 row row-cols2">
-                    <p className="col-6 fs-5 ps-4 my-0">Horas en un día: <i>{planet.rotation_period === "unknown" ? "desconocido" : planet.rotation_period}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Días en un año: <i>{planet.orbital_period === "unknown" ? "desconocido" : planet.orbital_period}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Diámetro: <i>{planet.diameter === "unknown" ? "desconocido" : planet.diameter + " km"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Gravedad: <i>{planet.gravity === "unknown" ? "desconocida" : planet.gravity}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Clima: <i>{planet.climate === "unknown" ? "desconocido" : planet.climate}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Tipo de terreno: <i>{planet.terrain === "unknown" ? "desconocida" : planet.terrain}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Agua en la superficie: <i>{planet.surface_water === "unknown" ? "desconocidos" : planet.surface_water + "%"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Población: <i>{planet.population === "unknown" ? "desconocido" : planet.population}</i></p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Planeta natal de: {planet.residents.length === 0 ?
+                <div className="container px-2 px-md-3 ms-0 row row-cols2">
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Horas en un día: <i>{planet.rotation_period === "unknown" ? "desconocido" : planet.rotation_period}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Días en un año: <i>{planet.orbital_period === "unknown" ? "desconocido" : planet.orbital_period}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Diámetro: <i>{planet.diameter === "unknown" ? "desconocido" : planet.diameter + " km"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Gravedad: <i>{planet.gravity === "unknown" ? "desconocida" : planet.gravity}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Clima: <i>{planet.climate === "unknown" ? "desconocido" : planet.climate}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Tipo de terreno: <i>{planet.terrain === "unknown" ? "desconocida" : planet.terrain}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Agua en la superficie: <i>{planet.surface_water === "unknown" ? "desconocidos" : planet.surface_water + "%"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Población: <i>{planet.population === "unknown" ? "desconocido" : planet.population}</i></p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Planeta natal de: {planet.residents.length === 0 ?
                         <i>desconocido</i>
                         :
                         planet.residents.map((url, index) => index != (planet.residents.length - 1) ?
@@ -68,7 +68,7 @@ export const Planets = () => {
                             :
                             <i key={index}>{getName(url, store.swPeople)}.</i>)}
                     </p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Peículas: {planet.films.length === 0 ?
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Peículas: {planet.films.length === 0 ?
                         <i>No aparece en ninguna</i>
                         :
                         planet.films.map((url, index) => index != (planet.films.length - 1) ?

@@ -28,21 +28,21 @@ export const Films = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getFilmsImages(film.uid)} />
-                    <div className="detail-title position-absolute bottom-0">
+                    <img className="rounded-top w-100 detail-image" src={getFilmsImages(film.uid)} />
+                    <div className="detail-title mx-2 mx-md-3 px-2 px-md-3 position-absolute bottom-0">
                         <h1>{film.title}</h1>
                         <h5 className="">Episodio {tradEpisode(film.episode_id)}</h5>
                     </div>
                 </div>
-                <div className="container ms-0 row row-cols2">
-                    <p className="fs-5 ps-4 text-warning fw-bold my-0 text-justify">{film.opening_crawl}</p>
-                    <p className="fs-5 ps-4 my-0">Director: <i>{film.director}</i></p>
-                    <p className="fs-5 ps-4 my-0">Productores: <i>{film.producer}</i></p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Personajes: {film.characters.map((url, index) => index != (film.characters.length - 1) ? <i key={"characters" + index}>{getName(url, store.swPeople)}, </i> : <i key={"characters" + index}>{getName(url, store.swPeople)}.</i>)}</p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Planetas: {film.planets.map((url, index) => index != (film.planets.length - 1) ? <i key={"planets" + index}>{getName(url, store.swPlanets)}, </i> : <i key={"planets" + index}>{getName(url, store.swPlanets)}.</i>)}</p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Naves: {film.starships.map((url, index) => index != (film.starships.length - 1) ? <i key={"starships" + index}>{getName(url, store.swShips)}, </i> : <i key={"starships" + index}>{getName(url, store.swShips)}.</i>)}</p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Vehículos: {film.vehicles.map((url, index) => index != (film.vehicles.length - 1) ? <i key={"vehicles" + index}>{getName(url, store.swVehicles)}, </i> : <i key={"vehicles" + index}>{getName(url, store.swVehicles)}.</i>)}</p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Especies: {film.species.map((url, index) => index != (film.species.length - 1) ? <i key={"species" + index}>{getName(url, store.swSpecies)}, </i> : <i key={"species" + index}>{getName(url, store.swSpecies)}.</i>)}</p>
+                <div className="container px-2 px-md-3 ms-0 px-2 px-md-3 row row-cols2">
+                    <p className="fs-5 text-justify px-2 px-md-3 text-warning fw-bold my-0 ">{film.opening_crawl}</p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0">Director: <i>{film.director}</i></p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0">Productores: <i>{film.producer}</i></p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Personajes: {film.characters.map((url, index) => index != (film.characters.length - 1) ? <i key={"characters" + index}>{getName(url, store.swPeople)}, </i> : <i key={"characters" + index}>{getName(url, store.swPeople)}.</i>)}</p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Planetas: {film.planets.map((url, index) => index != (film.planets.length - 1) ? <i key={"planets" + index}>{getName(url, store.swPlanets)}, </i> : <i key={"planets" + index}>{getName(url, store.swPlanets)}.</i>)}</p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Naves: {film.starships.map((url, index) => index != (film.starships.length - 1) ? <i key={"starships" + index}>{getName(url, store.swShips)}, </i> : <i key={"starships" + index}>{getName(url, store.swShips)}.</i>)}</p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Vehículos: {film.vehicles.map((url, index) => index != (film.vehicles.length - 1) ? <i key={"vehicles" + index}>{getName(url, store.swVehicles)}, </i> : <i key={"vehicles" + index}>{getName(url, store.swVehicles)}.</i>)}</p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Especies: {film.species.map((url, index) => index != (film.species.length - 1) ? <i key={"species" + index}>{getName(url, store.swSpecies)}, </i> : <i key={"species" + index}>{getName(url, store.swSpecies)}.</i>)}</p>
                 </div>
                 <div className="divider mx-5"></div>
                 {button}

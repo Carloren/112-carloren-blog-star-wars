@@ -42,22 +42,22 @@ export const Vehicles = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getVehiclesImages(vehicle.uid)} />
-                    <div className="detail-title position-absolute bottom-0">
+                    <img className="rounded-top w-100 detail-image" src={getVehiclesImages(vehicle.uid)} />
+                    <div className="detail-title mx-2 mx-md-3 px-2 px-md-3 position-absolute bottom-0">
                         <h1>{vehicle.name}</h1>
                         <h5 className="text-warning">Modelo {vehicle.model}, clase {vehicle.vehicle_class}</h5>
                     </div>
                 </div>
-                <div className="container ms-0 row row-cols2">
-                    <p className="col-12 fs-5 ps-4 my-0">Fabricante: <i>{vehicle.manufacturer === "unknown" ? "desconocido" : vehicle.manufacturer}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Coste: <i>{vehicle.cost_in_credits === "unknown" ? "desconocido" : vehicle.cost_in_credits + " créditos"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Longitud: <i>{vehicle.length === "unknown" ? "desconocida" : vehicle.length + "m"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Velocidad máxima: <i>{vehicle.max_atmosphering_speed === "unknown" ? "desconocida" : vehicle.max_atmosphering_speed + "km/h"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Carga máxima: <i>{vehicle.cargo_capacity === "unknown" ? "desconocida" : vehicle.cargo_capacity + "kg"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Tripulación: <i>{vehicle.crew === "unknown" ? "desconocida" : vehicle.crew}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Pasajeros: <i>{vehicle.passengers === "unknown" ? "desconocidos" : vehicle.passengers}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Provisiones: <i>{vehicle.consumables === "unknown" ? "desconocido" : "para " + vehicle.consumables}</i></p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Pilotos: {vehicle.pilots.length === 0 ?
+                <div className="container px-2 px-md-3 ms-0 row row-cols2">
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3 my-0">Fabricante: <i>{vehicle.manufacturer === "unknown" ? "desconocido" : vehicle.manufacturer}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Coste: <i>{vehicle.cost_in_credits === "unknown" ? "desconocido" : vehicle.cost_in_credits + " créditos"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Longitud: <i>{vehicle.length === "unknown" ? "desconocida" : vehicle.length + "m"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Velocidad máxima: <i>{vehicle.max_atmosphering_speed === "unknown" ? "desconocida" : vehicle.max_atmosphering_speed + "km/h"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Carga máxima: <i>{vehicle.cargo_capacity === "unknown" ? "desconocida" : vehicle.cargo_capacity + "kg"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Tripulación: <i>{vehicle.crew === "unknown" ? "desconocida" : vehicle.crew}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Pasajeros: <i>{vehicle.passengers === "unknown" ? "desconocidos" : vehicle.passengers}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Provisiones: <i>{vehicle.consumables === "unknown" ? "desconocido" : "para " + vehicle.consumables}</i></p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Pilotos: {vehicle.pilots.length === 0 ?
                         <i>desconocido</i>
                         :
                         vehicle.pilots.map((url, index) => index != (vehicle.pilots.length - 1) ?
@@ -65,7 +65,7 @@ export const Vehicles = () => {
                             :
                             <i key={index}>{getName(url, store.swPeople)}.</i>)}
                     </p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Peículas: {vehicle.films.length === 0 ?
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Peículas: {vehicle.films.length === 0 ?
                         <i>No aparece en ninguna</i>
                         :
                         vehicle.films.map((url, index) => index != (vehicle.films.length - 1) ?

@@ -63,7 +63,7 @@ export const Home = () => {
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
 			<div className="container-fluid d-flex mt-2">
-				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
+				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
 					{store.swPeople.map((person, index) => {
 						if (index < 10) {
 							return (
@@ -71,15 +71,15 @@ export const Home = () => {
 							)
 						}
 					})}
-					<Link to="/people" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
+					<Link to="/people" className="btn btn-outline-info my-2 px-auto d-flex col-auto align-items-center">Ver más</Link>
 				</div>
 			</div>																	{/*-------PELÍCULAS------- */}
 			<Link to="/films" className="d-flex text-warning long-time-ago">
 				<h2 className="mt-4 text-start">Películas</h2>
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
-			<div className="container-fluid d-flex mt-2">
-				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
+			<div className="container-fluid d-flex mt-2 ">
+				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
 					{store.swFilms.map((film, index) => {
 						if (index < 10) {
 							return (
@@ -87,7 +87,7 @@ export const Home = () => {
 							)
 						}
 					})}
-					<Link to="/films" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
+					<Link to="/films" className="btn btn-outline-info my-2 px-auto d-flex col-auto align-items-center">Ver más</Link>
 				</div>
 			</div>																	{/*-------NAVES------- */}
 			<Link to="/ships" className="d-flex text-warning long-time-ago">
@@ -95,7 +95,7 @@ export const Home = () => {
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
 			<div className="container-fluid d-flex mt-2">
-				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
+				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
 					{store.swShips.map((film, index) => {
 						if (index < 10) {
 							return (
@@ -103,7 +103,7 @@ export const Home = () => {
 							)
 						}
 					})}
-					<Link to="/ships" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
+					<Link to="/ships" className="btn btn-outline-info my-2 px-auto d-flex col-auto align-items-center">Ver más</Link>
 				</div>
 			</div>																	{/*-------VEHÍCULOS------- */}
 			<Link to="/vehicles" className="d-flex text-warning long-time-ago">
@@ -111,7 +111,7 @@ export const Home = () => {
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
 			<div className="container-fluid d-flex mt-2">
-				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
+				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
 					{store.swVehicles.map((film, index) => {
 						if (index < 10) {
 							return (
@@ -119,7 +119,7 @@ export const Home = () => {
 							)
 						}
 					})}
-					<Link to="/vehicles" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
+					<Link to="/vehicles" className="btn btn-outline-info my-2 px-auto d-flex col-auto align-items-center">Ver más</Link>
 				</div>
 			</div>																	{/*-------ESPECIES------- */}
 			<Link to="/species" className="d-flex text-warning long-time-ago">
@@ -127,7 +127,7 @@ export const Home = () => {
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
 			<div className="container-fluid d-flex mt-2">
-				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
+				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
 					{store.swSpecies.map((film, index) => {
 						if (index < 10) {
 							return (
@@ -135,7 +135,7 @@ export const Home = () => {
 							)
 						}
 					})}
-					<Link to="/species" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
+					<Link to="/species" className="btn btn-outline-info my-2 px-auto d-flex col-auto align-items-center">Ver más</Link>
 				</div>
 			</div>																	{/*-------PLANETAS------- */}
 			<Link to="/planets" className="d-flex text-warning long-time-ago">
@@ -143,7 +143,7 @@ export const Home = () => {
 				<div className="mt-5 mx-3 divider"></div>
 			</Link>
 			<div className="container-fluid d-flex mt-2">
-				<div className="row p-0 gx-3 flex-nowrap hide-scroll">
+				<div className="row p-0 gx-3 flex-nowrap hide-scroll hide-x">
 					{store.swPlanets.map((planet, index) => {
 						if (index < 10) {
 							return (
@@ -151,7 +151,7 @@ export const Home = () => {
 							)
 						}
 					})}
-					<Link to="/planets" className="btn btn-outline-info my-2 col-1 btn-more">Ver más</Link>
+					<Link to="/planets" className="btn btn-outline-info my-2 px-auto d-flex col-auto align-items-center">Ver más</Link>
 				</div>
 			</div>
 			<a className="btn btn-warning mx-auto mt-5" href="#">Volver arriba</a>

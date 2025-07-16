@@ -14,6 +14,10 @@ body {
     text-overflow: ellipsis;
 }
 
+.navbar {
+    max-height: 390px;
+}
+
 .navbar-brand {
     img {
         transition: 0.5s;
@@ -46,6 +50,11 @@ body {
     background-color: black;
     border-color: #0dcaf0;
     box-shadow: #0dcaf0 0px 0px 10px 2px
+}
+
+.dropdown-menu-end {
+    overflow-y: auto;
+    max-height: 90vh;
 }
 
 .hide {
@@ -131,18 +140,37 @@ li:hover>.hide {
     object-fit: cover
 }
 
-.hide-scroll {
+.hide-x {
     overflow-x: hidden;
     margin-bottom: 5px;
 }
 
 
-.hide-scroll:hover {
-    overflow-x: scroll;
+.hide-x:hover {
+    overflow-x: auto;
     margin-bottom: 0px;
 }
 
+.hide-y {
+    overflow-y: hidden;
+    padding-right: 5px;
+}
+
+.hide-y:hover {
+    overflow-y: auto;
+    padding-right: 0px;
+}
+
+.hide-y::-webkit-scrollbar-thumb {
+    background: #ffc107 !important;
+}
+
 .hide-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.hide-scroll::-webkit-scrollbar:hover {
     width: 5px;
     height: 5px;
 }
@@ -156,13 +184,7 @@ li:hover>.hide {
     background: cyan;
 }
 
-.btn-more {
-    vertical-align: middle;
-    padding-top: 16%;
-}
-
 .detail-title {
-    padding-left: 1.83rem !important;
     font-size: 6rem;
     text-shadow: black 0 0 10px !important;
 
@@ -171,7 +193,6 @@ li:hover>.hide {
     }
 
     h5 {
-        padding-left: 0.4rem !important;
         margin-top: -1em;
         text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
@@ -217,4 +238,63 @@ li:hover>.hide {
 
 .detail-link:active {
     color: #0dcaf0;
+}
+
+.carousel-img {
+    aspect-ratio: 3;
+    object-fit: cover
+}
+
+@media (max-width: 768px) {
+
+    .hide {
+        display: block;
+    }
+
+    .hide-scroll::-webkit-scrollbar {
+        display: auto;
+        width: 5px;
+        height: 5px;
+    }
+
+    .hide-x,
+    .hide-y {
+        padding-right: 0;
+        margin-bottom: 0;
+    }
+
+    .dropdown-menu-end {
+        overflow-y: auto;
+        max-height: 80vh;
+    }
+
+    .carousel-img {
+        aspect-ratio: 3/2;
+        object-fit: cover
+    }
+
+    .hide-scroll {
+        overflow: auto;
+    }
+
+    .detail-box {
+        width: 90%;
+    }
+
+    .detail-image {
+        aspect-ratio: 1.5;
+    }
+
+    .detail-title {
+        font-size: 2rem;
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .fs-5 text-justify {
+        font-size: 1rem !important;
+    }
 }

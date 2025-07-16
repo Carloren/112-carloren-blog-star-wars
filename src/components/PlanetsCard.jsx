@@ -28,7 +28,7 @@ export const PlanetsCard = ({ uid, index }) => {
     }, [store.favorites])
 
     return (
-        <div className="my-2 col-4">
+        <div className="my-2 col-md-4 col-12">
             <Card>
                 <Card.Img variant="top" src={getPlanetsImages(uid)} />
                 <Card.Body className='text-start'>

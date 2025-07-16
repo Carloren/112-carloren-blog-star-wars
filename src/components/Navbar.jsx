@@ -20,7 +20,7 @@ export const MyNavbar = () => {
 
 	const favorites =
 		(Object.values(store.favorites).filter((i) => i.length != 0).length != 0) ?
-			(<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning" >
+			(<ul className="dropdown-menu dropdown-menu-end text-start bg-black border-warning hide-scroll hide-y" >
 				{Object.keys(store.favorites).map((group) => store.favorites[group].length === 0 ? ""
 					:
 					<div key={group} >
@@ -47,31 +47,26 @@ export const MyNavbar = () => {
 			<nav className="navbar navbar-expand-lg fixed-top p-0" aria-label="Offcanvas navbar large">
 				<div className="container-fluid">
 					<Link to="/" className="navbar-brand" style={{ width: "100px" }}><img className="w-100 " src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png" /></Link>
-					<button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+
+					<button className="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="offcanvas offcanvas-end bg-black" tabIndex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
-						<div className="offcanvas-header">
-							<h5 className="offcanvas-title" id="offcanvasNavbar2Label"><img className="w-25" src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png" /></h5>
-							<button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-						</div>
-						<div className="offcanvas-body d-flex">
-							<ul className="navbar-nav justify-content-start flex-grow-1">
+					<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<div className="d-flex w-100">
+							<ul className="navbar-nav me-auto align-self-start mb-lg-0">
 								<li className="nav-link px-0"><Link to="/people" className="nav-link">Personajes</Link></li>
 								<li className="nav-link px-0"><Link to="/films" className="nav-link">Películas</Link></li>
 								<li className="nav-link px-0"><Link to="/ships" className="nav-link">Naves</Link></li>
 								<li className="nav-link px-0"><Link to="/vehicles" className="nav-link">Vehículos</Link></li>
 								<li className="nav-link px-0"><Link to="/species" className="nav-link">Especies</Link></li>
 								<li className="nav-link px-0"><Link to="/planets" className="nav-link">Planetas</Link></li>
-							</ul >
-							<ul className="navbar-nav algin-delf-end justify-content-end">
-								<li className="nav-link px-0">
-									<form className="d-flex mt-0" role="search">
-										<input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-										<button className="btn btn-outline-info" type="submit">Buscar</button>
-									</form>
-								</li>
-								<li className="nav-link px-0 ms-2 dropdown text-end">
+							</ul>
+							<ul className="navbar-nav align-self-start">
+								<form className="d-flex my-2" role="search">
+									<input id="search" className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+									<button className="btn btn-outline-info" type="submit">Buscar</button>
+								</form>
+								<li className="nav-link dropdown text-end pe-0">
 									<button className="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
 										Favoritos
 									</button>
@@ -79,7 +74,7 @@ export const MyNavbar = () => {
 								</li>
 							</ul>
 						</div >
-					</div >
+					</div>
 				</div >
 			</nav >
 		</div>

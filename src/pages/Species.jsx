@@ -53,21 +53,21 @@ export const Species = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getSpeciesImages(specie.uid)} />
-                    <div className="detail-title position-absolute bottom-0">
+                    <img className="rounded-top w-100 detail-image" src={getSpeciesImages(specie.uid)} />
+                    <div className="detail-title mx-2 mx-md-3 px-2 px-md-3 position-absolute bottom-0">
                         <h1>{specie.name}</h1>
                         <h5 className="text-warning">Ser {specie.designation} del grupo de los {specie.classification}</h5>
                     </div>
                 </div>
-                <div className="container ms-0 row row-cols2">
-                    <p className="col-6 fs-5 ps-4 my-0">Altura media: <i>{specie.average_height === "n/a" ? "indefinida" : specie.average_height + " cm"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Vida media: <i>{specie.average_lifespan === "unknown" ? "desconocida" : specie.average_lifespan === "indefinite" ? "indefinida" : specie.average_lifespan + " años"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Colores de piel: <i>{specie.skin_colors === "n/a" ? "indefinidos" : specie.skin_colors}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Colores de pelo: <i>{specie.hair_colors === "n/a" ? "indefinidos" : specie.hair_colors}</i></p>
-                    <p className="col-12 fs-5 ps-4 my-0">Colores de ojos: <i>{specie.eye_colors === "n/a" ? "indefinidos" : specie.eye_colors}</i></p>
-                    <p className="col-6 fs-5 ps-4">Planeta de origen: <i>{specie.homeworld === null ? "ninguno" : specie.homeworld === "unknown" ? "desconocido" : getName(specie.homeworld, store.swPlanets)}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Idioma: <i>{specie.language === "unknown" ? "desconocida" : specie.language === "n/a" ? "indefinido" : specie.language}</i></p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Personajes: {speciesPeople.length === 0 ?
+                <div className="container px-2 px-md-3 ms-0 row row-cols2">
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Altura media: <i>{specie.average_height === "n/a" ? "indefinida" : specie.average_height + " cm"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Vida media: <i>{specie.average_lifespan === "unknown" ? "desconocida" : specie.average_lifespan === "indefinite" ? "indefinida" : specie.average_lifespan + " años"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Colores de piel: <i>{specie.skin_colors === "n/a" ? "indefinidos" : specie.skin_colors}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Colores de pelo: <i>{specie.hair_colors === "n/a" ? "indefinidos" : specie.hair_colors}</i></p>
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3 my-0">Colores de ojos: <i>{specie.eye_colors === "n/a" ? "indefinidos" : specie.eye_colors}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3">Planeta de origen: <i>{specie.homeworld === null ? "ninguno" : specie.homeworld === "unknown" ? "desconocido" : getName(specie.homeworld, store.swPlanets)}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Idioma: <i>{specie.language === "unknown" ? "desconocida" : specie.language === "n/a" ? "indefinido" : specie.language}</i></p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Personajes: {speciesPeople.length === 0 ?
                         <i>desconocidos</i>
                         :
                         speciesPeople.map((url, index) => index != (speciesPeople.length - 1) ?
@@ -75,7 +75,7 @@ export const Species = () => {
                             :
                             <i key={index}>{getName(url, store.swPeople)}.</i>)}
                     </p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Peículas: {specie.films.length === 0 ?
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Peículas: {specie.films.length === 0 ?
                         <i>No aparece en ninguna</i>
                         :
                         specie.films.map((url, index) => index != (specie.films.length - 1) ?

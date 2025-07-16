@@ -42,24 +42,24 @@ export const Ships = () => {
         return (
             <div className="detail-box container d-flex flex-column border border-white mt-5 rounded bg-black p-0">
                 <div className="position-relative">
-                    <img className="rounded-top w-100 detail-image" style={{ height: "34em", objectFit: "cover" }} src={getShipsImages(ship.uid)} />
-                    <div className="detail-title position-absolute bottom-0">
+                    <img className="rounded-top w-100 detail-image" src={getShipsImages(ship.uid)} />
+                    <div className="detail-title mx-2 mx-md-3 px-2 px-md-3 position-absolute bottom-0">
                         <h1>{ship.name}</h1>
                         <h5 className="text-warning">Modelo {ship.model}, clase {ship.starship_class}</h5>
                     </div>
                 </div>
-                <div className="container ms-0 row row-cols2">
-                    <p className="col-12 fs-5 ps-4 my-0">Fabricante: <i>{ship.manufacturer === "unknown" ? "desconocido" : ship.manufacturer}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Coste: <i>{ship.cost_in_credits === "unknown" ? "desconocido" : ship.cost_in_credits + " créditos"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Longitud: <i>{ship.length === "unknown" ? "desconocida" : ship.length + "m"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Velocidad atmosférica máxima: <i>{ship.max_atmosphering_speed === "unknown" ? "desconocida" : ship.max_atmosphering_speed + "km/h"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Velocidad máxima en vacío: <i>{ship.MGLT === "unknown" ? "desconocido" : ship.MGLT + " MGLT"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Tripulación: <i>{ship.crew === "unknown" ? "desconocida" : ship.crew}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Pasajeros: <i>{ship.passengers === "unknown" ? "desconocidos" : ship.passengers}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Provisiones: <i>{ship.consumables === "unknown" ? "desconocido" : "para " + ship.consumables}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Carga máxima: <i>{ship.cargo_capacity === "unknown" ? "desconocida" : ship.cargo_capacity + "kg"}</i></p>
-                    <p className="col-6 fs-5 ps-4 my-0">Velocidad luz clase <i>{ship.hyperdrive_rating === "unknown" ? "desconocido" : ship.hyperdrive_rating}</i></p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Pilotos: {ship.pilots.length === 0 ?
+                <div className="container px-2 px-md-3 ms-0 row row-cols2">
+                    <p className="col-12 fs-5 text-justify px-2 px-md-3 my-0">Fabricante: <i>{ship.manufacturer === "unknown" ? "desconocido" : ship.manufacturer}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Coste: <i>{ship.cost_in_credits === "unknown" ? "desconocido" : ship.cost_in_credits + " créditos"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Longitud: <i>{ship.length === "unknown" ? "desconocida" : ship.length + "m"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Velocidad atmosférica máxima: <i>{ship.max_atmosphering_speed === "unknown" ? "desconocida" : ship.max_atmosphering_speed + "km/h"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Velocidad máxima en vacío: <i>{ship.MGLT === "unknown" ? "desconocido" : ship.MGLT + " MGLT"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Tripulación: <i>{ship.crew === "unknown" ? "desconocida" : ship.crew}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Pasajeros: <i>{ship.passengers === "unknown" ? "desconocidos" : ship.passengers}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Provisiones: <i>{ship.consumables === "unknown" ? "desconocido" : "para " + ship.consumables}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Carga máxima: <i>{ship.cargo_capacity === "unknown" ? "desconocida" : ship.cargo_capacity + "kg"}</i></p>
+                    <p className="col-12 col-md-6 fs-5 text-justify px-2 px-md-3 my-0">Velocidad luz clase <i>{ship.hyperdrive_rating === "unknown" ? "desconocido" : ship.hyperdrive_rating}</i></p>
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Pilotos: {ship.pilots.length === 0 ?
                         <i>desconocido</i>
                         :
                         ship.pilots.map((url, index) => index != (ship.pilots.length - 1) ?
@@ -67,7 +67,7 @@ export const Ships = () => {
                             :
                             <i key={index}>{getName(url, store.swPeople)}.</i>)}
                     </p>
-                    <p className="fs-5 ps-4 my-0 text-justify">Películas: {ship.films.length === 0 ?
+                    <p className="fs-5 text-justify px-2 px-md-3 my-0 ">Películas: {ship.films.length === 0 ?
                         <i>No aparece en ninguna</i>
                         :
                         ship.films.map((url, index) => index != (ship.films.length - 1) ?
