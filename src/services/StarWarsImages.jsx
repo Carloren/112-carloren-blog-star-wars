@@ -784,7 +784,7 @@ export function getPlanetsImages(uid) {
             return "https://static.wikia.nocookie.net/swfanon/images/e/e7/DorinMoonSea.png"
 
         case 50:
-            return "https://static.wikia.nocookie.net/starwars/images/1/1f/Thyferra.jpg"
+            return "https://static.wikia.nocookie.net/starwars/images/2/22/Sullust-SWBC62.png"
 
         case 51:
             return "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bacac58b-3be9-42b4-ae42-7a656c195a28/dcconau-dfb1f9dd-35db-476f-b5bb-81c6b0560ea4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JhY2FjNThiLTNiZTktNDJiNC1hZTQyLTdhNjU2YzE5NWEyOFwvZGNjb25hdS1kZmIxZjlkZC0zNWRiLTQ3NmYtYjViYi04MWM2YjA1NjBlYTQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GE672UV88JBEKc3tIbdq8Nr59_UTi5zTk7tc8fnKEcU"
