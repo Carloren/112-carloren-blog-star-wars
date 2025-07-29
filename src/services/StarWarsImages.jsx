@@ -85,7 +85,7 @@ export function getPeopleImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/mon-mothma-main_effb3e9c.jpeg?region=168%2C0%2C944%2C531"
 
         case 29:
-            return "https://static.wikia.nocookie.net/esstarwars/images/d/de/Arvel-crynyd.jpg/revision/latest?cb=20180818202306"
+            return "https://static.wikia.nocookie.net/esstarwars/images/d/de/Arvel-crynyd.jpg"
 
         case 30:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_wickettwwarrick_01_169_86d1210c.jpeg?region=0%2C0%2C1560%2C878"
@@ -142,7 +142,7 @@ export function getPeopleImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/databank_rattstyerell_01_169_031aea6d.jpeg?region=0%2C0%2C1560%2C878"
 
         case 48:
-            return "https://static.wikia.nocookie.net/starwars/images/7/73/Dud_Bolt_Podracer_Cockpit.png/revision/latest?cb=20141214155313"
+            return "https://static.wikia.nocookie.net/starwars/images/7/73/Dud_Bolt_Podracer_Cockpit.png"
 
         case 49:
             return "https://lumiere-a.akamaihd.net/v1/images/gasgano_6f648f83.jpeg?region=0%2C48%2C2252%2C1267"
@@ -181,7 +181,7 @@ export function getPeopleImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/captain-typho_f9e8d7bd.jpeg?region=0%2C0%2C1186%2C668"
 
         case 61:
-            return "https://static.wikia.nocookie.net/esstarwars/images/b/b6/Cord%C3%A9_-_SW_Card_Trader.png/revision/latest?cb=20190310031832"
+            return "https://static.wikia.nocookie.net/esstarwars/images/b/b6/Cord%C3%A9_-_SW_Card_Trader.png"
 
         case 62:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_cliegglars_01_169_c2f0b9cb.jpeg?region=0%2C0%2C1560%2C878"
@@ -346,7 +346,7 @@ export function getShipsImages(uid) {
             return "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84d44311-4aa5-472d-b391-42b113229ca0/ddemjhg-271ce35e-ea5b-455c-b696-4a7a44dbd042.png/v1/fill/w_1280,h_655,q_80,strp/the_scimitar_by_boskov01_ddemjhg-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjU1IiwicGF0aCI6IlwvZlwvODRkNDQzMTEtNGFhNS00NzJkLWIzOTEtNDJiMTEzMjI5Y2EwXC9kZGVtamhnLTI3MWNlMzVlLWVhNWItNDU1Yy1iNjk2LTRhN2E0NGRiZDA0Mi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.sW8uS7gnADz3zcyeI2SGirIxD2-8J5JMpUin9uny50A"
 
         case 43:
-            return "https://static.wikia.nocookie.net/starwars/images/1/1b/NabooRoyalCruiser-CGSWG.png/revision/latest/scale-to-width-down/1200?cb=20250206064245"
+            return "https://static.wikia.nocookie.net/starwars/images/1/1b/NabooRoyalCruiser-CGSWG.png"
 
         case 47:
             return "https://lumiere-a.akamaihd.net/v1/images/aa-9-coruscant-freighter_a856053d.jpeg?region=92%2C0%2C1181%2C665"
@@ -358,7 +358,7 @@ export function getShipsImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/h-type-nubian-yacht_7d67bc00.jpeg?region=0%2C0%2C1181%2C663"
 
         case 52:
-            return "https://static.wikia.nocookie.net/starwars/images/f/fe/Acclamator_I_ships.png/revision/latest?cb=20201206074714"
+            return "https://static.wikia.nocookie.net/starwars/images/f/fe/Acclamator_I_ships.png"
 
         case 58:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_geonosiansolarsailer_01_169_b3873578.jpeg?region=0%2C0%2C1560%2C878"
@@ -373,7 +373,7 @@ export function getShipsImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/databank_republicattackcruiser_01_169_812f153d.jpeg?region=0%2C0%2C1560%2C878"
 
         case 64:
-            return "https://static.wikia.nocookie.net/starwars/images/d/df/Naboo_star_skiff_1.png/revision/latest/scale-to-width-down/1919?cb=20130212042348"
+            return "https://static.wikia.nocookie.net/starwars/images/d/df/Naboo_star_skiff_1.png"
 
         case 65:
             return "https://www.brickfanatics.com/wp-content/uploads/2024/07/Star-Wars-The-Clone-Wars-Ahsoka-Eta-2-Interceptor.jpg"
@@ -413,7 +413,7 @@ export function getVehiclesImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/snowspeeder_ef2f9334.jpeg?region=0%2C211%2C2048%2C1154"
 
         case 16:
-            return "https://static.wikia.nocookie.net/esstarwars/images/1/17/TIE_Bomber_BF2.png/revision/latest?cb=20171101030957"
+            return "https://static.wikia.nocookie.net/esstarwars/images/1/17/TIE_Bomber_BF2.png"
 
         case 18:
             return "https://lumiere-a.akamaihd.net/v1/images/AT-AT_89d0105f.jpeg?region=214%2C19%2C1270%2C716"
@@ -422,7 +422,7 @@ export function getVehiclesImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/e6d_ia_5724_a150e6d4.jpeg?region=124%2C0%2C1424%2C802"
 
         case 20:
-            return "https://static.wikia.nocookie.net/starwars/images/3/3b/Cloud-car-v2.png/revision/latest?cb=20160617064429"
+            return "https://static.wikia.nocookie.net/starwars/images/3/3b/Cloud-car-v2.png/"
 
         case 24:
             return "https://www.brickfanatics.com/wp-content/uploads/2023/03/Star-Wars-Return-of-the-Jedi-Jabbas-Sail-Barge.jpg"
@@ -431,16 +431,16 @@ export function getVehiclesImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/skiff_9d81647a.jpeg?region=0%2C88%2C1560%2C878"
 
         case 26:
-            return "https://static.wikia.nocookie.net/esstarwars/images/f/f5/TIE_Interceptor_BF.png/revision/latest?cb=20171101021333"
+            return "https://static.wikia.nocookie.net/esstarwars/images/f/f5/TIE_Interceptor_BF.png/"
 
         case 30:
-            return "https://static.wikia.nocookie.net/starwars/images/4/47/Speeder_Bike_DICE.png/revision/latest/scale-to-width-down/1200?cb=20230723010519"
+            return "https://static.wikia.nocookie.net/starwars/images/4/47/Speeder_Bike_DICE.png/"
 
         case 33:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_vulturedroid_01_169_6ef9fd50.jpeg?region=0%2C0%2C1560%2C878"
 
         case 34:
-            return "https://static.wikia.nocookie.net/esstarwars/images/a/ab/MTT_BF2.png/revision/latest?cb=20180617235758"
+            return "https://static.wikia.nocookie.net/esstarwars/images/a/ab/MTT_BF2.png"
 
         case 35:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_aatbattletank_01_169_9de46aea.jpeg?region=0%2C49%2C1560%2C780"
@@ -449,28 +449,28 @@ export function getVehiclesImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/databank_stap_01_169_75029522.jpeg?region=0%2C0%2C1560%2C878"
 
         case 37:
-            return "https://static.wikia.nocookie.net/esstarwars/images/d/d0/L-2832-TCWS01E01.jpg/revision/latest?cb=20180720002458"
+            return "https://static.wikia.nocookie.net/esstarwars/images/d/d0/L-2832-TCWS01E01.jpg"
 
         case 38:
-            return "https://static.wikia.nocookie.net/esstarwars/images/2/2d/Bongo_1.jpg/revision/latest/scale-to-width-down/1200?cb=20100602224226"
+            return "https://static.wikia.nocookie.net/esstarwars/images/2/2d/Bongo_1.jpg"
 
         case 42:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_sithspeeder_01_169_cfa01a05.jpeg?region=0%2C0%2C1560%2C878"
 
         case 44:
-            return "https://static.wikia.nocookie.net/starwars/images/2/21/Anakin_looking_dramatic.png/revision/latest?cb=20250322114637"
+            return "https://static.wikia.nocookie.net/starwars/images/2/21/Anakin_looking_dramatic.png"
 
         case 45:
-            return "https://static.wikia.nocookie.net/starwars/images/2/22/Koro2_uvg.jpg/revision/latest/scale-to-width-down/1200?cb=20130519005132"
+            return "https://static.wikia.nocookie.net/starwars/images/2/22/Koro2_uvg.jpg/"
 
         case 46:
             return "https://i.pinimg.com/736x/cb/30/c8/cb30c8353f6a1a98ba0514f3843dbc96.jpg"
 
         case 50:
-            return "https://static.wikia.nocookie.net/esstarwars/images/c/c5/Low_Altitude_Assault_Transport.png/revision/latest?cb=20160731235724"
+            return "https://static.wikia.nocookie.net/esstarwars/images/c/c5/Low_Altitude_Assault_Transport.png"
 
         case 51:
-            return "https://static.wikia.nocookie.net/starwars/images/6/63/LAATc_USW.png/revision/latest/scale-to-width-down/1200?cb=20241201080310"
+            return "https://static.wikia.nocookie.net/starwars/images/6/63/LAATc_USW.png"
 
         case 53:
             return "https://lumiere-a.akamaihd.net/v1/images/at-te-main_09471f2b.jpeg?region=158%2C0%2C964%2C542"
@@ -491,28 +491,28 @@ export function getVehiclesImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/ep3_ia_96565_46396938.jpeg?region=233%2C0%2C1454%2C818"
 
         case 62:
-            return "https://static.wikia.nocookie.net/starwars/images/4/4e/Firespeeders.jpg/revision/latest?cb=20080317095744&path-prefix=nl"
+            return "https://static.wikia.nocookie.net/starwars/images/4/4e/Firespeeders.jpg"
 
         case 67:
-            return "https://static.wikia.nocookie.net/starwars/images/a/a0/DroidTrifighter-TCWs3BR2.png/revision/latest?cb=20230919010425"
+            return "https://static.wikia.nocookie.net/starwars/images/a/a0/DroidTrifighter-TCWs3BR2.png"
 
         case 69:
-            return "https://static.wikia.nocookie.net/starwars/images/0/03/Wookieeflyingcat2.png/revision/latest/scale-to-width-down/1200?cb=20130202035458"
+            return "https://static.wikia.nocookie.net/starwars/images/0/03/Wookieeflyingcat2.png"
 
         case 70:
-            return "https://static.wikia.nocookie.net/swse/images/9/9a/Gnasp_Fluttercraft.jpg/revision/latest/scale-to-width-down/1200?cb=20190717214620"
+            return "https://static.wikia.nocookie.net/swse/images/9/9a/Gnasp_Fluttercraft.jpg/"
 
         case 71:
-            return "https://static.wikia.nocookie.net/starwars/images/9/9c/A9_tank_Chiang.jpg/revision/latest?cb=20181102005222"
+            return "https://static.wikia.nocookie.net/starwars/images/9/9c/A9_tank_Chiang.jpg"
 
         case 72:
             return "https://lumiere-a.akamaihd.net/v1/images/nr_n99_persuader_class_tank_droid_f910aac1.jpeg?region=596%2C184%2C964%2C481"
 
         case 73:
-            return "https://static.wikia.nocookie.net/esstarwars/images/6/6d/DroidGunship-DB.png/revision/latest?cb=20200313184324"
+            return "https://static.wikia.nocookie.net/esstarwars/images/6/6d/DroidGunship-DB.png"
 
         case 76:
-            return "https://static.wikia.nocookie.net/esstarwars/images/5/5c/AT-RT_BF2.png/revision/latest?cb=20190501232359"
+            return "https://static.wikia.nocookie.net/esstarwars/images/5/5c/AT-RT_BF2.png/"
 
         default:
             return "https://lumiere-a.akamaihd.net/v1/images/swcj-hero-container-mobile_c3fdce51.jpeg?region=0%2C0%2C1600%2C900";
@@ -570,7 +570,7 @@ export function getSpeciesImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/databank_rattstyerell_01_169_031aea6d.jpeg?region=0%2C0%2C1560%2C878"
 
         case 17:
-            return "https://static.wikia.nocookie.net/starwars/images/7/73/Dud_Bolt_Podracer_Cockpit.png/revision/latest?cb=20141214155313"
+            return "https://static.wikia.nocookie.net/starwars/images/7/73/Dud_Bolt_Podracer_Cockpit.png"
 
         case 18:
             return "https://lumiere-a.akamaihd.net/v1/images/gasgano_6f648f83.jpeg?region=0%2C48%2C2252%2C1267"
@@ -715,7 +715,7 @@ export function getPlanetsImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/dantooine_f1c04676.jpeg?region=0%2C20%2C1560%2C878"
 
         case 26:
-            return "https://static.wikia.nocookie.net/esstarwars/images/b/bd/Bestine.png/revision/latest?cb=20151031042433"
+            return "https://static.wikia.nocookie.net/esstarwars/images/b/bd/Bestine.png"
 
         case 27:
             return "https://lumiere-a.akamaihd.net/v1/images/ordo-mantell-main_0320929c.jpeg?region=158%2C0%2C964%2C542"
@@ -754,16 +754,16 @@ export function getPlanetsImages(uid) {
             return "https://media.moddb.com/cache/images/mods/1/22/21018/thumb_620x2000/Sins_of_a_Solar_Empire_Rebellio_2014-05-11_16-46-48-16.png"
 
         case 40:
-            return "https://static.wikia.nocookie.net/esstarwars/images/7/7d/ZygerriaTVE.png/revision/latest/smart/width/386/height/259?cb=20181121010331"
+            return "https://static.wikia.nocookie.net/esstarwars/images/7/7d/ZygerriaTVE.png"
 
         case 41:
-            return "https://static.wikia.nocookie.net/esstarwars/images/3/31/Tund_TEA.jpg/revision/latest?cb=20221022170839"
+            return "https://static.wikia.nocookie.net/esstarwars/images/3/31/Tund_TEA.jpg"
 
         case 42:
-            return "https://static.wikia.nocookie.net/starwarsofthecaribbean/images/6/6f/Jungle_Planet_Resource.jpg/revision/latest?cb=20120309222948"
+            return "https://static.wikia.nocookie.net/starwarsofthecaribbean/images/6/6f/Jungle_Planet_Resource.jpg"
 
         case 43:
-            return "https://static.wikia.nocookie.net/esstarwars/images/c/cc/Cerea-FDCR.png/revision/latest?cb=20170616213312"
+            return "https://static.wikia.nocookie.net/esstarwars/images/c/cc/Cerea-FDCR.png"
 
         case 44:
             return "https://cdnb.artstation.com/p/assets/images/images/022/894/425/large/slawomir-rudzki-highresscreenshot00004.jpg?1577131657"
@@ -778,13 +778,13 @@ export function getPlanetsImages(uid) {
             return "https://i.imgur.com/W21tjcY.jpg"
 
         case 48:
-            return "https://static.wikia.nocookie.net/esstarwars/images/7/7f/Dxun.JPG/revision/latest/smart/width/386/height/259?cb=20070124002139"
+            return "https://static.wikia.nocookie.net/esstarwars/images/7/7f/Dxun.JPG"
 
         case 49:
-            return "https://static.wikia.nocookie.net/swfanon/images/e/e7/DorinMoonSea.png/revision/latest?cb=20220814214648"
+            return "https://static.wikia.nocookie.net/swfanon/images/e/e7/DorinMoonSea.png"
 
         case 50:
-            return "https://static.wikia.nocookie.net/starwars/images/1/1f/Thyferra.jpg/revision/latest/smart/width/386/height/259?cb=20240827070808&path-prefix=nl"
+            return "https://static.wikia.nocookie.net/starwars/images/1/1f/Thyferra.jpg"
 
         case 51:
             return "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bacac58b-3be9-42b4-ae42-7a656c195a28/dcconau-dfb1f9dd-35db-476f-b5bb-81c6b0560ea4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JhY2FjNThiLTNiZTktNDJiNC1hZTQyLTdhNjU2YzE5NWEyOFwvZGNjb25hdS1kZmIxZjlkZC0zNWRiLTQ3NmYtYjViYi04MWM2YjA1NjBlYTQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GE672UV88JBEKc3tIbdq8Nr59_UTi5zTk7tc8fnKEcU"
@@ -793,13 +793,13 @@ export function getPlanetsImages(uid) {
             return "https://lumiere-a.akamaihd.net/v1/images/databank_serenno_01_169_0541fc55.jpeg?region=0%2C0%2C1560%2C878"
 
         case 53:
-            return "https://static.wikia.nocookie.net/esstarwars/images/8/84/Concord_Dawn_system.png/revision/latest?cb=20201206201814"
+            return "https://static.wikia.nocookie.net/esstarwars/images/8/84/Concord_Dawn_system.png"
 
         case 54:
-            return "https://static.wikia.nocookie.net/esstarwars/images/6/66/Zolan.jpg/revision/latest?cb=20130215223751"
+            return "https://static.wikia.nocookie.net/esstarwars/images/6/66/Zolan.jpg"
 
         case 55:
-            return "https://static.wikia.nocookie.net/esstarwars/images/9/9f/Ojom.jpg/revision/latest?cb=20120423190534"
+            return "https://static.wikia.nocookie.net/esstarwars/images/9/9f/Ojom.jpg"
 
         case 56:
             return "https://rpggamer.org/uploaded_images/Skako_Minor.jpg"
@@ -808,10 +808,10 @@ export function getPlanetsImages(uid) {
             return "https://preview.redd.it/ysy0qims31z71.jpg?width=1080&crop=smart&auto=webp&s=25b65dc7dec000d2f0027d732ce57d35b813f54a"
 
         case 58:
-            return "https://static.wikia.nocookie.net/starwars/images/b/b4/ShiliVillage-LaD.png/revision/latest?cb=20221027035437"
+            return "https://static.wikia.nocookie.net/starwars/images/b/b4/ShiliVillage-LaD.png"
 
         case 59:
-            return "https://static.wikia.nocookie.net/starwars/images/b/b6/NotTenochtitlan-TEoR.jpg/revision/latest?cb=20200703215746"
+            return "https://static.wikia.nocookie.net/starwars/images/b/b6/NotTenochtitlan-TEoR.jpg"
 
         case 60:
             return "https://lumiere-a.akamaihd.net/v1/images/databank_umbara_01_169_beef68c7.jpeg?region=0%2C0%2C1560%2C878"
